@@ -5,7 +5,7 @@
 3. 中断系统
 
 # 工具利器
-1. perf
+1. [perf](./tools/perf.md) 
 2. top
 3. vmstat
 4. mpstat
