@@ -6,8 +6,8 @@
 
 # 工具利器
 1. [perf](./tools/perf.md) 
-2. top
-3. vmstat
+2. [top](./tools/top.md) 
+3. [vmstat](./tools/vmstat.md) 
 4. mpstat
 5. pidstat
 6. objdump
