@@ -68,4 +68,62 @@ lxc-create -n ubuntu -t ubuntu-cloud -- -r vivid -T http://192.168.1.107/ubuntu-
 ####################################################################
 xxxxx
 ####################################################################
+grub cmdline:
+use set to list all env,eg:
+prefix=(hd0,gpt1)/EFI/BOOT
+prefix is the direct of grub.cfg
+by set prefix=(hd0,gpt1)/xxx(the direct of grub.cfg),and then "normal",it will boot success.
+
+overdrive:
+[root@cent-est sda]# tree
+.
+├── EFI
+│   └── BOOT
+│       ├── bootaa64.efi
+│       └── grub.cfg
+├── Image
+├── mini-rootfs-arm64.cpio.gz
+└── startup.nsh
+
+
+[root@cent-est sda]# cat startup.nsh 
+bootaa64
+
+
+[root@CentOS ~]# efibootmgr 
+[  100.758105] efi_call_virt_check_flags: 71 callbacks suppressed
+[  100.763947] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.772879] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.781803] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.790725] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.799647] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.808567] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.817624] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.826661] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.835697] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+[  100.844738] efi: [Firmware Bug]: IRQ flags corrupted (0x00000140=>0x00000100) by EFI get_variable
+BootCurrent: 0005
+Timeout: 5 seconds
+BootOrder: 0005,0006,0004,0001,0000
+Boot0000* opensuse-tumbleweed-arm-jeos-efi
+Boot0001* Grub
+Boot0004  UEFI: Built-in EFI Shell
+Boot0005* UEFI: Network Port00
+Boot0006* UEFI: Network Port01
+
+
+grub.cfg:
+menuentry 'estuary mini'  --id 'estuary_mini' {
+	search --no-floppy --fs-uuid --set=root 85F9-AF34
+	linux	/Image plymouth.enable=0 console=ttyAMA0,115200n8  
+	initrd	/mini-rootfs-arm64.cpio.gz 
+}
+menuentry 'centos-estuary nfs'  --id 'centos_nfs' {
+	search --no-floppy --fs-uuid --set=root 85F9-AF34
+	linux	/Image plymouth.enable=0 console=ttyAMA0,115200n8 root=/dev/nfs rw nfsroot=192.168.1.107:/home/hisilicon/ftp/fengchunsong/Centos,nfsvers=3 ip=dhcp
+}
+menuentry 'centos-estuary'  --id 'centos' {
+	search --no-floppy --fs-uuid --set=root 85F9-AF34
+	linux	/Image root=PARTUUID=f62ab48e-b73e-485a-a335-50bb5ae50046     plymouth.enable=0 console=ttyAMA0,115200n8 rootwait rootfstype=ext4 rw 
+}
 
