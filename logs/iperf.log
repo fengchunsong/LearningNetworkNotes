@@ -118,3 +118,307 @@ TCP window size:  448 KByte (WARNING: requested  256 KByte)
 [  4]  0.0-100.0 sec   110 GBytes  9.41 Gbits/sec
 
 
+3.use 4.9 with 4.7config and hns
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 41952 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.3 sec   379 MBytes  9.34 Gbits/sec
+
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 41954 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.7 sec   814 MBytes  9.39 Gbits/sec
+
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 41956 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.6 sec   679 MBytes  9.37 Gbits/sec
+
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 41958 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 0.4 sec   485 MBytes  9.35 Gbits/sec
+[root@CentOS ~]# 
+[root@CentOS ~]# 
+[root@CentOS ~]# 
+[root@CentOS ~]# 
+[root@CentOS ~]# iperf -s -w 256k
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49676
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-10.0 sec  11.0 GBytes  9.41 Gbits/sec
+[  5] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49678
+[  5]  0.0-10.0 sec  11.0 GBytes  9.41 Gbits/sec
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49680
+[  4]  0.0- 5.3 sec  5.80 GBytes  9.40 Gbits/sec
+[  5] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49682
+[  5]  0.0- 0.6 sec   611 MBytes  9.26 Gbits/sec
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49684
+[  4]  0.0- 0.3 sec   373 MBytes  9.15 Gbits/sec
+[  5] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49686
+[  5]  0.0- 0.3 sec   292 MBytes  9.38 Gbits/sec
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 49688
+[  4]  0.0- 0.3 sec   289 MBytes  9.28 Gbits/sec
+[root@CentOS ~]# qperf -oo msg_size:1:64k:*2 192.168.12.11 tcp_bw tcp_lat
+tcp_bw:
+    bw  =  1.8 MB/sec
+tcp_bw:
+    bw  =  3.43 MB/sec
+tcp_bw:
+    bw  =  6.82 MB/sec
+tcp_bw:
+    bw  =  13.6 MB/sec
+tcp_bw:
+    bw  =  26 MB/sec
+tcp_bw:
+    bw  =  50.5 MB/sec
+tcp_bw:
+    bw  =  96.5 MB/sec
+tcp_bw:
+    bw  =  182 MB/sec
+tcp_bw:
+    bw  =  317 MB/sec
+tcp_bw:
+    bw  =  494 MB/sec
+tcp_bw:
+    bw  =  677 MB/sec
+tcp_bw:
+    bw  =  823 MB/sec
+tcp_bw:
+    bw  =  1.18 GB/sec
+tcp_bw:
+    bw  =  1.18 GB/sec
+tcp_bw:
+    bw  =  1.17 GB/sec
+tcp_bw:
+    bw  =  1.18 GB/sec
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  60.9 us
+tcp_lat:
+    latency  =  62.3 us
+tcp_lat:
+    latency  =  70.1 us
+tcp_lat:
+    latency  =  75.3 us
+tcp_lat:
+    latency  =  100 us
+
+
+------------------------------------------------------------
+4.estuary_defconfig without crypto and secure options
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 58976 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   907 MBytes  7.61 Gbits/sec
+[  3]  1.0- 2.0 sec   769 MBytes  6.45 Gbits/sec
+[  3]  2.0- 3.0 sec   768 MBytes  6.44 Gbits/sec
+[  3]  3.0- 4.0 sec   769 MBytes  6.45 Gbits/sec
+[  3]  4.0- 5.0 sec   767 MBytes  6.44 Gbits/sec
+[  3]  5.0- 6.0 sec   769 MBytes  6.45 Gbits/sec
+[  3]  6.0- 7.0 sec   769 MBytes  6.45 Gbits/sec
+[  3]  7.0- 8.0 sec   769 MBytes  6.45 Gbits/sec
+[  3]  8.0- 9.0 sec   769 MBytes  6.45 Gbits/sec
+[  3]  9.0-10.0 sec   768 MBytes  6.45 Gbits/sec
+[  3]  0.0-10.0 sec  7.64 GBytes  6.56 Gbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 58978 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   923 MBytes  7.74 Gbits/sec
+[  3]  1.0- 2.0 sec   766 MBytes  6.42 Gbits/sec
+[  3]  2.0- 3.0 sec   765 MBytes  6.42 Gbits/sec
+[  3]  3.0- 4.0 sec   765 MBytes  6.42 Gbits/sec
+[  3]  4.0- 5.0 sec   766 MBytes  6.42 Gbits/sec
+[  3]  5.0- 6.0 sec   765 MBytes  6.42 Gbits/sec
+[  3]  6.0- 7.0 sec   762 MBytes  6.40 Gbits/sec
+[  3]  7.0- 8.0 sec   761 MBytes  6.39 Gbits/sec
+[  3]  8.0- 9.0 sec   761 MBytes  6.38 Gbits/sec
+[  3]  9.0-10.0 sec   762 MBytes  6.39 Gbits/sec
+[  3]  0.0-10.0 sec  7.61 GBytes  6.54 Gbits/sec
+
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 58980 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   922 MBytes  7.73 Gbits/sec
+[  3]  1.0- 2.0 sec   763 MBytes  6.40 Gbits/sec
+[  3]  2.0- 3.0 sec   763 MBytes  6.40 Gbits/sec
+[  3]  3.0- 4.0 sec   762 MBytes  6.40 Gbits/sec
+[  3]  4.0- 5.0 sec   830 MBytes  6.96 Gbits/sec
+[  3]  5.0- 6.0 sec   764 MBytes  6.41 Gbits/sec
+[  3]  6.0- 7.0 sec   763 MBytes  6.40 Gbits/sec
+[  3]  7.0- 8.0 sec   763 MBytes  6.40 Gbits/sec
+[  3]  8.0- 9.0 sec   764 MBytes  6.40 Gbits/sec
+[  3]  9.0-10.0 sec   762 MBytes  6.40 Gbits/sec
+[  3]  0.0-10.0 sec  7.67 GBytes  6.59 Gbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 58982 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   911 MBytes  7.64 Gbits/sec
+[  3]  1.0- 2.0 sec   766 MBytes  6.42 Gbits/sec
+[  3]  2.0- 3.0 sec   766 MBytes  6.42 Gbits/sec
+[  3]  3.0- 4.0 sec   765 MBytes  6.42 Gbits/sec
+[  3]  4.0- 5.0 sec   874 MBytes  7.33 Gbits/sec
+[  3]  5.0- 6.0 sec   766 MBytes  6.43 Gbits/sec
+[  3]  6.0- 7.0 sec   766 MBytes  6.43 Gbits/sec
+[  3]  7.0- 8.0 sec   766 MBytes  6.42 Gbits/sec
+[  3]  8.0- 9.0 sec   767 MBytes  6.43 Gbits/sec
+[  3]  9.0-10.0 sec   766 MBytes  6.43 Gbits/sec
+[  3]  0.0-10.0 sec  7.73 GBytes  6.64 Gbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 58984 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   934 MBytes  7.83 Gbits/sec
+[  3]  1.0- 2.0 sec   813 MBytes  6.82 Gbits/sec
+[  3]  2.0- 3.0 sec   815 MBytes  6.84 Gbits/sec
+[  3]  3.0- 4.0 sec   814 MBytes  6.83 Gbits/sec
+[  3]  4.0- 5.0 sec   814 MBytes  6.83 Gbits/sec
+[  3]  5.0- 6.0 sec   814 MBytes  6.83 Gbits/sec
+[  3]  6.0- 7.0 sec   815 MBytes  6.84 Gbits/sec
+[  3]  7.0- 8.0 sec   816 MBytes  6.84 Gbits/sec
+[  3]  8.0- 9.0 sec   912 MBytes  7.65 Gbits/sec
+[  3]  9.0-10.0 sec   818 MBytes  6.86 Gbits/sec
+[  3]  0.0-10.0 sec  8.17 GBytes  7.02 Gbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 58986 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   902 MBytes  7.56 Gbits/sec
+[  3]  1.0- 2.0 sec   762 MBytes  6.40 Gbits/sec
+[  3]  2.0- 3.0 sec   762 MBytes  6.39 Gbits/sec
+[  3]  3.0- 4.0 sec   762 MBytes  6.39 Gbits/sec
+[  3]  4.0- 5.0 sec   762 MBytes  6.39 Gbits/sec
+[  3]  5.0- 6.0 sec   762 MBytes  6.39 Gbits/sec
+[  3]  6.0- 7.0 sec   763 MBytes  6.40 Gbits/sec
+[  3]  7.0- 8.0 sec   762 MBytes  6.39 Gbits/sec
+[  3]  8.0- 9.0 sec  1.04 GBytes  8.97 Gbits/sec
+[  3]  9.0-10.0 sec  1.10 GBytes  9.42 Gbits/sec
+[  3]  0.0-10.0 sec  8.23 GBytes  7.07 Gbits/sec
+[root@CentOS ~]# 
+[root@CentOS ~]# cat /proc/version 
+Linux version 4.9.0+ (fengchunsong@HTSAT-OPENLAB-SERVER) (gcc version 4.9.2 20140904 (prerelease) (crosstool-NG linaro-1.13.1-4.9-2014.09 - Linaro GCC 4.9-2014.09) ) #1 SMP Tue[root@CentOS ~]# qperf -oo msg_size:1:64k:*2 192.168.12.11 tcp_bw tcp_lat
+tcp_bw:
+    bw  =  1.74 MB/sec
+tcp_bw:
+    bw  =  3.66 MB/sec
+tcp_bw:
+    bw  =  7.22 MB/sec
+tcp_bw:
+    bw  =  14 MB/sec
+tcp_bw:
+    bw  =  28.3 MB/sec
+tcp_bw:
+    bw  =  53.5 MB/sec
+tcp_bw:
+    bw  =  102 MB/sec
+tcp_bw:
+    bw  =  187 MB/sec
+tcp_bw:
+    bw  =  320 MB/sec
+tcp_bw:
+    bw  =  642 MB/sec
+tcp_bw:
+    bw  =  949 MB/sec
+tcp_bw:
+    bw  =  1.02 GB/sec
+tcp_bw:
+    bw  =  916 MB/sec
+tcp_bw:
+    bw  =  1 GB/sec
+tcp_bw:
+    bw  =  1.12 GB/sec
+tcp_bw:
+    bw  =  1.1 GB/sec
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  62.8 us
+tcp_lat:
+    latency  =  63.1 us
+tcp_lat:
+    latency  =  66.1 us
+tcp_lat:
+    latency  =  72.6 us
+tcp_lat:           ': scp fengchunsong@192.168.1.101:~/mkernel_estuarywithout_cry
+[root@CentOS ~]# 02 ': scp fengchunsong@192.168.1.101:~/mkernel_estuarywithout_cr
+[root@CentOS ~]# netperf -H 192.168.12.11 -l 60ne': scp fengchunsong@192.168.1.101:~/mkernel_estuarywithout_c
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.12.11 () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    60.00    9414.45 
+

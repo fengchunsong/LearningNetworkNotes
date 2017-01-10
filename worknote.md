@@ -184,12 +184,15 @@ HWADDR=00:0C:29:13:5D:74 #网卡设备MAC地址
 BROADCAST=192.168.1.255 #网卡广播地址 
 
 mind:
+------------------------------------------------------------
 1.use 4.7 kernel test,should be ok
 iperf:
 0.0-100.0 sec   110 GBytes  9.41 Gbits/sec
 
+------------------------------------------------------------
 2.use 4.9 with 4.7config:test 5.6Gbps
 
+------------------------------------------------------------
 3.use 4.9 with 4.7config and hns
 [root@CentOS ~]# iperf -s -w 256k
 ------------------------------------------------------------
@@ -212,5 +215,27 @@ TCP window size:  448 KByte (WARNING: requested  256 KByte)
 after few minutes with irqbalance:
 0.0-11.7 sec  12.8 GBytes  9.39 Gbits/sec
 
-4.merge 4.7 defconfig in
+------------------------------------------------------------
+4.estuary_defconfig without crypto and secure options
+iperf is not ok,qperf is ok
+[root@CentOS ~]# iperf -s -w 256k
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 58976
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-10.0 sec  7.64 GBytes  6.56 Gbits/sec
+[  5] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 58978
+[  5]  0.0-10.0 sec  7.61 GBytes  6.54 Gbits/sec
+[  4] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 58980
+[  4]  0.0-10.0 sec  7.67 GBytes  6.59 Gbits/sec
+[  5] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 58982
+[  5]  0.0-10.0 sec  7.73 GBytes  6.63 Gbits/sec
+[  4] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 58984
+[  4]  0.0-10.0 sec  8.17 GBytes  7.01 Gbits/sec
+[  5] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 58986
+[  5]  0.0-10.0 sec  8.23 GBytes  7.07 Gbits/sec
+
+
 
