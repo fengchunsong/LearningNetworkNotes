@@ -238,4 +238,15 @@ TCP window size:  448 KByte (WARNING: requested  256 KByte)
 [  5]  0.0-10.0 sec  8.23 GBytes  7.07 Gbits/sec
 
 
+5.estuary_defconfig then use zxj private config
+iperf not ok
 
+6.common mini config should be ok
+
+
+7.if common is ok,then use common config as base;
+  if common not ok,then use zxjallconfig as base.
+  check estuary configs,try to find add which configs will cause iperf low performance. 
+
+
+	
