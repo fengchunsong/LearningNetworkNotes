@@ -241,12 +241,47 @@ TCP window size:  448 KByte (WARNING: requested  256 KByte)
 5.estuary_defconfig then use zxj private config
 iperf not ok
 
+
 6.common mini config should be ok
+iperf ok
+qperf min ng,big ok
+netperf ok
 
 
 7.if common is ok,then use common config as base;
   if common not ok,then use zxjallconfig as base.
   check estuary configs,try to find add which configs will cause iperf low performance. 
 
+  1).add estuary all test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf ok
+
+  2).add estuary 1-1470 test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf ng
+
+  3).add estuary 1471-2994 test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf ok
+
+####################################################################
+update kernel and modules
+####################################################################
+mount /dev/sda1 /mnt
+rm -f /mnt/Image_dbg
+
+rm -rf /lib/modules/4.9*
+rm -rf /lib/firmware
+
+
+cp out/binary/Image /mnt/Image_dbg
+cp out/modules/lib/firmware /lib/ -a
+cp out/modules/lib/modules/* /lib/modules -a
+
+ll /mnt/Image_*
+ls /lib/firmware
+ls /lib/modules/
+
+sync
 
 	
