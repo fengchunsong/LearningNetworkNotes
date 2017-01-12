@@ -970,3 +970,507 @@ bytes  bytes   bytes    secs.    10^6bits/sec
 
  87380  16384  16384    60.00    9414.64 
 
+==========================================================
+  2.1).add estuary 1-720 test,estuary and zxj diff,use zxj diff.
+[root@CentOS ~]# iperf -s -w 256k
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 36100
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  28.0 GBytes  8.01 Gbits/sec
+[  5] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 36102
+[  5]  0.0-30.0 sec  28.1 GBytes  8.04 Gbits/sec
+[root@CentOS ~]# iperf -c 192.168.12.11 -P 1 -i 1 -t 30
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 32958 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   994 MBytes  8.34 Gbits/sec
+[  3]  1.0- 2.0 sec   904 MBytes  7.59 Gbits/sec
+[  3]  2.0- 3.0 sec   901 MBytes  7.56 Gbits/sec
+[  3]  3.0- 4.0 sec   985 MBytes  8.26 Gbits/sec
+[  3]  4.0- 5.0 sec  1.10 GBytes  9.42 Gbits/sec
+[  3]  5.0- 6.0 sec  1.10 GBytes  9.41 Gbits/sec
+[  3]  6.0- 7.0 sec   994 MBytes  8.34 Gbits/sec
+[  3]  7.0- 8.0 sec   896 MBytes  7.52 Gbits/sec
+[  3]  8.0- 9.0 sec   893 MBytes  7.49 Gbits/sec
+[  3]  9.0-10.0 sec   939 MBytes  7.87 Gbits/sec
+[  3] 10.0-11.0 sec  1.10 GBytes  9.42 Gbits/sec
+[  3] 11.0-12.0 sec  1.10 GBytes  9.42 Gbits/sec
+[  3] 12.0-13.0 sec  1.10 GBytes  9.41 Gbits/sec
+[  3] 13.0-14.0 sec  1.10 GBytes  9.41 Gbits/sec
+[  3] 14.0-15.0 sec  1.10 GBytes  9.42 Gbits/sec
+[  3] 15.0-16.0 sec  1.08 GBytes  9.30 Gbits/sec
+[  3] 16.0-17.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 17.0-18.0 sec   893 MBytes  7.49 Gbits/sec
+[  3] 18.0-19.0 sec   893 MBytes  7.49 Gbits/sec
+[  3] 19.0-20.0 sec   894 MBytes  7.50 Gbits/sec
+[  3] 20.0-21.0 sec   895 MBytes  7.50 Gbits/sec
+[  3] 21.0-22.0 sec   894 MBytes  7.50 Gbits/sec
+[  3] 22.0-23.0 sec   949 MBytes  7.96 Gbits/sec
+[  3] 23.0-24.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 24.0-25.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 25.0-26.0 sec   894 MBytes  7.50 Gbits/sec
+[  3] 26.0-27.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 27.0-28.0 sec   952 MBytes  7.99 Gbits/sec
+[  3] 28.0-29.0 sec   894 MBytes  7.50 Gbits/sec
+[root@CentOS ~]#  qperf -oo msg_size:1:64k:*2 192.168.12.11 tcp_bw tcp_lat
+tcp_bw:
+    bw  =  1.45 MB/sec  qperf -oo msg_size:1:64k:*2 192.168.12.11 tcp_bw tcp_lat 
+tcp_bw:
+    bw  =  2.88 MB/sec
+tcp_bw:
+    bw  =  5.85 MB/sec
+tcp_bw:
+    bw  =  11.9 MB/sec
+tcp_bw:
+    bw  =  21.9 MB/sec
+tcp_bw:
+    bw  =  42.3 MB/sec
+tcp_bw:
+    bw  =  85.5 MB/sec
+tcp_bw:
+    bw  =  169 MB/sec
+tcp_bw:
+    bw  =  288 MB/sec
+tcp_bw:
+    bw  =  458 MB/sec
+tcp_bw:
+    bw  =  709 MB/sec
+tcp_bw:
+    bw  =  909 MB/sec
+tcp_bw:
+    bw  =  1.06 GB/sec
+tcp_bw:
+    bw  =  1.12 GB/sec
+tcp_bw:
+    bw  =  1.14 GB/sec
+tcp_bw:
+    bw  =  1.16 GB/sec
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.8 us
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.8 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  63.4 us
+tcp_lat:
+    latency  =  63.8 us
+tcp_lat:
+    latency  =  65.6 us
+tcp_lat:
+    latency  =  72.5 us
+tcp_lat:
+    latency  =  98.3 us
+
+[root@CentOS ~]#  netperf -H 192.168.12.12 -l 60
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.12.12 () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    60.01    8907.09   
+====================================================
+  2.2).add estuary 721-1470 test,estuary and zxj diff,use zxj diff.
+[root@CentOS ~]# iperf -s -w 256k
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 41320
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  25.0 GBytes  7.17 Gbits/sec
+[  5] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 41322
+[  5]  0.0-30.0 sec  28.1 GBytes  8.05 Gbits/sec
+[root@CentOS ~]# iperf -c 192.168.12.12 -P 1 -i 1 -t 30
+------------------------------------------------------------
+Client connecting to 192.168.12.12, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.12.11 port 54076 connected with 192.168.12.12 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.00 GBytes  8.60 Gbits/sec
+[  3]  1.0- 2.0 sec   954 MBytes  8.00 Gbits/sec
+[  3]  2.0- 3.0 sec   950 MBytes  7.96 Gbits/sec
+[  3]  3.0- 4.0 sec   948 MBytes  7.95 Gbits/sec
+[  3]  4.0- 5.0 sec   947 MBytes  7.95 Gbits/sec
+[  3]  5.0- 6.0 sec   946 MBytes  7.93 Gbits/sec
+[  3]  6.0- 7.0 sec   944 MBytes  7.92 Gbits/sec
+[  3]  7.0- 8.0 sec   943 MBytes  7.91 Gbits/sec
+[  3]  8.0- 9.0 sec   944 MBytes  7.92 Gbits/sec
+[  3]  9.0-10.0 sec   946 MBytes  7.93 Gbits/sec
+[  3] 10.0-11.0 sec   966 MBytes  8.10 Gbits/sec
+[  3] 11.0-12.0 sec   970 MBytes  8.13 Gbits/sec
+[  3] 12.0-13.0 sec   946 MBytes  7.93 Gbits/sec
+[  3] 13.0-14.0 sec   944 MBytes  7.92 Gbits/sec
+[  3] 14.0-15.0 sec   944 MBytes  7.92 Gbits/sec
+[  3] 15.0-16.0 sec   944 MBytes  7.92 Gbits/sec
+[  3] 16.0-17.0 sec   946 MBytes  7.93 Gbits/sec
+[  3] 17.0-18.0 sec   945 MBytes  7.93 Gbits/sec
+[  3] 18.0-19.0 sec   946 MBytes  7.94 Gbits/sec
+[  3] 19.0-20.0 sec   946 MBytes  7.94 Gbits/sec
+[  3] 20.0-21.0 sec   946 MBytes  7.93 Gbits/sec
+[  3] 21.0-22.0 sec   946 MBytes  7.94 Gbits/sec
+[  3] 22.0-23.0 sec   946 MBytes  7.94 Gbits/sec
+[  3] 23.0-24.0 sec   946 MBytes  7.93 Gbits/sec
+[  3] 24.0-25.0 sec   945 MBytes  7.93 Gbits/sec
+[  3] 25.0-26.0 sec   944 MBytes  7.92 Gbits/sec
+[  3] 26.0-27.0 sec   945 MBytes  7.93 Gbits/sec
+[  3] 27.0-28.0 sec   944 MBytes  7.92 Gbits/sec
+[  3] 28.0-29.0 sec   945 MBytes  7.93 Gbits/sec
+[  3] 29.0-30.0 sec   945 MBytes  7.93 Gbits/sec
+[  3]  0.0-30.0 sec  27.8 GBytes  7.97 Gbits/sec
+[root@CentOS ~]# qperf
+
+[root@CentOS ~]#  netperf -H 192.168.12.12 -l 60
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.12.12 () port 0 AF_INET
+
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    60.00    9333.49 
+
+[root@CentOS ~]#7.8 GBytes  7.97 Gbits/sec
+tcp_bw:
+    bw  =  1.46 MB/sec
+tcp_bw:
+    bw  =  2.96 MB/sec
+tcp_bw:
+    bw  =  5.93 MB/sec
+tcp_bw:
+    bw  =  11.7 MB/sec
+tcp_bw:
+    bw  =  21.4 MB/sec
+tcp_bw:
+    bw  =  41.9 MB/sec
+tcp_bw:
+    bw  =  84 MB/sec
+tcp_bw:
+    bw  =  160 MB/sec
+tcp_bw:
+    bw  =  287 MB/sec
+tcp_bw:
+    bw  =  455 MB/sec
+tcp_bw:
+    bw  =  601 MB/sec
+tcp_bw:
+    bw  =  798 MB/sec
+tcp_bw:
+    bw  =  1.07 GB/sec
+tcp_bw:
+    bw  =  1.04 GB/sec
+tcp_bw:
+    bw  =  1.13 GB/sec
+tcp_bw:
+    bw  =  1.14 GB/sec
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.8 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.8 us
+tcp_lat:
+    latency  =  63 us
+tcp_lat:
+    latency  =  63.4 us
+tcp_lat:
+    latency  =  66.7 us
+tcp_lat:
+    latency  =  72.4 us
+tcp_lat:
+    latency  =  109 us
+=========================================
+  2.1.1).add estuary 1-358 test,estuary and zxj diff,use zxj diff.
+[root@CentOS ~]# iperf -s -w 256k
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 58354
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  26.7 GBytes  7.65 Gbits/sec
+[  5] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 58356
+[  5]  0.0-30.0 sec  25.9 GBytes  7.42 Gbits/sec
+[root@CentOS ~]# iperf -c 192.168.12.11 -P 1 -i 1 -t 30
+------------------------------------------------------------
+Client connecting to 192.168.12.11, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.12.12 port 42370 connected with 192.168.12.11 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   997 MBytes  8.36 Gbits/sec
+[  3]  1.0- 2.0 sec   906 MBytes  7.60 Gbits/sec
+[  3]  2.0- 3.0 sec   903 MBytes  7.57 Gbits/sec
+[  3]  3.0- 4.0 sec   899 MBytes  7.54 Gbits/sec
+[  3]  4.0- 5.0 sec   896 MBytes  7.51 Gbits/sec
+[  3]  5.0- 6.0 sec   955 MBytes  8.01 Gbits/sec
+[  3]  6.0- 7.0 sec   896 MBytes  7.51 Gbits/sec
+[  3]  7.0- 8.0 sec   895 MBytes  7.51 Gbits/sec
+[  3]  8.0- 9.0 sec   894 MBytes  7.50 Gbits/sec
+[  3]  9.0-10.0 sec   894 MBytes  7.50 Gbits/sec
+[  3] 10.0-11.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 11.0-12.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 12.0-13.0 sec   896 MBytes  7.52 Gbits/sec
+[  3] 13.0-14.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 14.0-15.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 15.0-16.0 sec   895 MBytes  7.51 Gbits/sec
+[  3] 16.0-17.0 sec   896 MBytes  7.51 Gbits/sec
+[  3] 17.0-18.0 sec   942 MBytes  7.90 Gbits/sec
+[  3] 18.0-19.0 sec   893 MBytes  7.49 Gbits/sec
+[  3] 19.0-20.0 sec   892 MBytes  7.49 Gbits/sec
+[  3] 20.0-21.0 sec   893 MBytes  7.49 Gbits/sec
+[  3] 21.0-22.0 sec   956 MBytes  8.02 Gbits/sec
+[  3] 22.0-23.0 sec   900 MBytes  7.55 Gbits/sec
+[  3] 23.0-24.0 sec   892 MBytes  7.48 Gbits/sec
+[  3] 24.0-25.0 sec   892 MBytes  7.48 Gbits/sec
+[  3] 25.0-26.0 sec   959 MBytes  8.04 Gbits/sec
+[  3] 26.0-27.0 sec   898 MBytes  7.53 Gbits/sec
+[  3] 27.0-28.0 sec   891 MBytes  7.48 Gbits/sec
+[  3] 28.0-29.0 sec   892 MBytes  7.48 Gbits/sec
+[  3] 29.0-30.0 sec   930 MBytes  7.80 Gbits/sec
+[root@CentOS ~]#6.6 GBytes  7.61 Gbits/sec
+tcp_bw:
+    bw  =  1.44 MB/sec
+tcp_bw:
+    bw  =  2.94 MB/sec
+tcp_bw:
+    bw  =  5.87 MB/sec
+tcp_bw:
+    bw  =  11.4 MB/sec
+tcp_bw:
+    bw  =  21.7 MB/sec
+tcp_bw:
+    bw  =  41.9 MB/sec
+tcp_bw:
+    bw  =  84.6 MB/sec
+tcp_bw:
+    bw  =  168 MB/sec
+tcp_bw:
+    bw  =  294 MB/sec
+tcp_bw:
+    bw  =  437 MB/sec
+tcp_bw:
+    bw  =  673 MB/sec
+tcp_bw:
+    bw  =  979 MB/sec
+tcp_bw:
+    bw  =  961 MB/sec
+tcp_bw:
+    bw  =  1.09 GB/sec
+tcp_bw:
+    bw  =  1.13 GB/sec
+tcp_bw:
+    bw  =  1.15 GB/sec
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.8 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  62.9 us
+tcp_lat:
+    latency  =  63.8 us
+tcp_lat:
+    latency  =  66.5 us
+tcp_lat:
+    latency  =  74.4 us
+tcp_lat:
+    latency  =  99.1 us
+[root@CentOS ~]#  netperf -H 192.168.12.12 -l 60
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.12.12 () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    60.01    8921.96   
+
+=========================================
+  2.1.2).add estuary 359-720 test,estuary and zxj diff,use zxj diff.
+
+[root@CentOS ~]# iperf -s -w 256k
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 36812
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-30.0 sec  32.8 GBytes  9.40 Gbits/sec
+[  5] local 192.168.12.11 port 5001 connected with 192.168.12.12 port 36814
+[  5]  0.0-30.0 sec  26.7 GBytes  7.63 Gbits/sec
+[root@CentOS ~]# iperf -c 192.168.12.12 -P 1 -i 1 -t 30
+------------------------------------------------------------
+Client connecting to 192.168.12.12, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.12.11 port 40576 connected with 192.168.12.12 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   985 MBytes  8.26 Gbits/sec
+[  3]  1.0- 2.0 sec   886 MBytes  7.43 Gbits/sec
+[  3]  2.0- 3.0 sec   880 MBytes  7.38 Gbits/sec
+[  3]  3.0- 4.0 sec   877 MBytes  7.36 Gbits/sec
+[  3]  4.0- 5.0 sec   959 MBytes  8.04 Gbits/sec
+[  3]  5.0- 6.0 sec   877 MBytes  7.36 Gbits/sec
+[  3]  6.0- 7.0 sec   876 MBytes  7.35 Gbits/sec
+[  3]  7.0- 8.0 sec   874 MBytes  7.34 Gbits/sec
+[  3]  8.0- 9.0 sec   874 MBytes  7.33 Gbits/sec
+[  3]  9.0-10.0 sec   874 MBytes  7.33 Gbits/sec
+[  3] 10.0-11.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 11.0-12.0 sec   874 MBytes  7.34 Gbits/sec
+[  3] 12.0-13.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 13.0-14.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 14.0-15.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 15.0-16.0 sec   923 MBytes  7.74 Gbits/sec
+[  3] 16.0-17.0 sec   874 MBytes  7.33 Gbits/sec
+[  3] 17.0-18.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 18.0-19.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 19.0-20.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 20.0-21.0 sec   876 MBytes  7.35 Gbits/sec
+[  3] 21.0-22.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 22.0-23.0 sec   876 MBytes  7.35 Gbits/sec
+[  3] 23.0-24.0 sec   913 MBytes  7.66 Gbits/sec
+[  3] 24.0-25.0 sec   877 MBytes  7.35 Gbits/sec
+[  3] 25.0-26.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 26.0-27.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 27.0-28.0 sec   875 MBytes  7.34 Gbits/sec
+[  3] 28.0-29.0 sec   910 MBytes  7.64 Gbits/sec
+[  3] 29.0-30.0 sec   875 MBytes  7.34 Gbits/sec
+[  3]  0.0-30.0 sec  26.0 GBytes  7.43 Gbits/sec
+
+[root@CentOS ~]#  netperf -H 192.168.12.12 -l 60
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.12.12 () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    60.00    9093.43  
+TCP window size:  448 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  4] local 192.168.12.12 port 5001 connected with 192.168.12.11 port 40576
+[root@CentOS ~]#  qperf -oo msg_size:1:64k:*2 192.168.12.11 tcp_bw tcp_lat
+tcp_bw:
+(reverse-i-search)`q':  qperf -oo msg_size:1:64k:*2 192.168.12.11 tcp_bw tcp_lat 
+
+    bw  =  1.4 MB/sec
+tcp_bw:
+    bw  =  2.93 MB/sec
+tcp_bw:
+    bw  =  5.91 MB/sec
+tcp_bw:
+    bw  =  11.6 MB/sec
+tcp_bw:
+    bw  =  21.9 MB/sec
+tcp_bw:
+    bw  =  42.4 MB/sec
+tcp_bw:
+    bw  =  86.2 MB/sec
+tcp_bw:
+    bw  =  172 MB/sec
+tcp_bw:
+    bw  =  289 MB/sec
+tcp_bw:
+    bw  =  473 MB/sec
+tcp_bw:
+    bw  =  626 MB/sec
+tcp_bw:
+    bw  =  903 MB/sec
+tcp_bw:
+    bw  =  1.1 GB/sec
+tcp_bw:
+    bw  =  1.12 GB/sec
+tcp_bw:
+    bw  =  1.1 GB/sec
+tcp_bw:
+    bw  =  1.09 GB/sec
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.8 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  27.7 us
+tcp_lat:
+    latency  =  27.6 us
+tcp_lat:
+    latency  =  63.2 us
+tcp_lat:
+    latency  =  64.3 us
+tcp_lat:
+    latency  =  65.7 us
+tcp_lat:
+    latency  =  76.5 us
+tcp_lat:
+    latency  =  103 us
+
+

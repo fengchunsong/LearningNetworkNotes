@@ -259,10 +259,92 @@ netperf ok
   2).add estuary 1-1470 test,estuary and zxj diff,use zxj diff.
     iperf/qperf ng
     netperf ng
+  2.1).add estuary 1-720 test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf ng
+  2.1.1).add estuary 1-358 test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf ng
+  2.1.2).add estuary 359-720 test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf ok
 
+  2.2).add estuary 721-1470 test,estuary and zxj diff,use zxj diff.
+    iperf/qperf ng
+    netperf better
   3).add estuary 1471-2994 test,estuary and zxj diff,use zxj diff.
     iperf/qperf ng
     netperf ok
+================================================================
+1. zxj:
+iperf:ok
+qperf:ok
+netperf:ok
+================================================================
+3. est1471-2294:--ok
+iperf:ok
+qperf:low
+netperf:ok
+================================================================
+2. est1-1470:
+iperf:ng
+qperf:ok
+netperf:ng
+================================================================
+2.2 est705-1470:--ok
+iperf:ok
+qperf:ok
+netperf:ok
+================================================================
+2.1 est1-704:
+iperf:ng
+qperf:ok
+netperf:ok
+================================================================
+2.1.2 est351-704:--ok
+iperf:ok
+qperf:ok
+netperf:ok
+================================================================
+2.1.1 est1-350:
+iperf:ng
+qperf:ok
+netperf:ng
+================================================================
+2.1.1.1 est1-175:
+iperf:ng
+qperf:low
+netperf:low
+================================================================
+2.1.1.2 est176-350:--ok
+iperf: ok
+qperf: ok
+netperf:ok 
+================================================================
+2.1.1.1.1 est1-87:
+iperf: ok
+qperf: ok low
+netperf: ok
+
+2.1.1.1.1.1 est1-41:
+iperf:  ok
+qperf:   ok 
+netperf:  ok
+2.1.1.1.1.2 est42-87:
+iperf:  ok
+qperf:  ok
+netperf: ok 
+================================================================
+2.1.1.1.1 est88-175:
+iperf: ok low
+qperf: ok low
+netperf: ok
+================================================================
+4K page
+iperf:  ok
+qperf:  ok
+netperf: ok
+================================================================
 
 ####################################################################
 update kernel and modules
