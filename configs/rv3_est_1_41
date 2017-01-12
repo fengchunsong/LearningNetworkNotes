@@ -1,0 +1,41 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# Linux/arm64 4.9.0 Kernel Configuration
+#
+CONFIG_ARM64_PAGE_SHIFT=16
+CONFIG_ARM64_CONT_SHIFT=5
+CONFIG_ARCH_MMAP_RND_BITS_MIN=14
+CONFIG_ARCH_MMAP_RND_BITS_MAX=29
+CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=7
+CONFIG_PGTABLE_LEVELS=3
+
+#
+# General setup
+#
+
+#
+# IRQ subsystem
+#
+
+#
+# Timers subsystem
+#
+CONFIG_NO_HZ=y
+
+#
+# CPU/Task time and stats accounting
+#
+CONFIG_IRQ_TIME_ACCOUNTING=y
+
+#
+# RCU Subsystem
+#
+CONFIG_TASKS_RCU=y
+CONFIG_LOG_BUF_SHIFT=18
+CONFIG_MEMCG_SWAP_ENABLED=y
+# CONFIG_RT_GROUP_SCHED is not set
+# CONFIG_CHECKPOINT_RESTORE is not set
+# CONFIG_EXPERT is not set
+# CONFIG_SGETMASK_SYSCALL is not set
+# CONFIG_SYSCTL_SYSCALL is not set
+
