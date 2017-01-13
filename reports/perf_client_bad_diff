@@ -1,0 +1,578 @@
+# Event 'instructions'
+#
+# Baseline    Delta  Shared Object       Symbol                                 
+# ........  .......  ..................  .......................................
+#
+    69.08%   +1.62%  [kernel.kallsyms]   [k] __arch_copy_from_user
+     3.33%   +0.16%  [kernel.kallsyms]   [k] get_page_from_freelist
+     2.57%   -0.21%  [kernel.kallsyms]   [k] tcp_sendmsg
+     1.59%   +0.03%  [kernel.kallsyms]   [k] hns_nic_select_queue
+     1.14%   +0.12%  [kernel.kallsyms]   [k] skb_page_frag_refill
+     0.97%   -0.05%  [kernel.kallsyms]   [k] copy_from_iter
+     0.93%   +0.02%  [kernel.kallsyms]   [k] kmem_cache_alloc_node
+     0.91%   -0.09%  [kernel.kallsyms]   [k] __alloc_skb
+     0.87%   -0.02%  [kernel.kallsyms]   [k] hns_nic_net_xmit_hw
+     0.80%   -0.01%  [kernel.kallsyms]   [k] __free_pages_ok
+     0.74%   -0.01%  [kernel.kallsyms]   [k] __kmalloc_node_track_caller
+     0.67%   -0.36%  [kernel.kallsyms]   [k] __do_softirq
+     0.58%   -0.01%  [kernel.kallsyms]   [k] tcp_write_xmit
+     0.52%   +0.05%  [kernel.kallsyms]   [k] finish_task_switch
+     0.52%   -0.04%  [kernel.kallsyms]   [k] tcp_ack
+     0.50%   -0.03%  [kernel.kallsyms]   [k] fill_v2_desc
+     0.45%   -0.08%  [kernel.kallsyms]   [k] tcp_transmit_skb
+     0.40%   +0.02%  iperf               [.] 0x0000000000001f00
+     0.38%   -0.09%  [kernel.kallsyms]   [k] skb_release_data
+     0.37%   +0.06%  [kernel.kallsyms]   [k] skb_entail
+     0.35%   +0.08%  [kernel.kallsyms]   [k] __zone_watermark_ok
+     0.35%   +0.02%  [kernel.kallsyms]   [k] __local_bh_enable_ip
+     0.32%   +0.01%  [kernel.kallsyms]   [k] __alloc_pages_nodemask
+     0.32%   -0.04%  [kernel.kallsyms]   [k] _raw_spin_lock
+     0.31%   -0.06%  [kernel.kallsyms]   [k] __dev_queue_xmit
+     0.31%   -0.05%  [kernel.kallsyms]   [k] fill_tso_desc
+     0.26%   -0.09%  [kernel.kallsyms]   [k] __slab_alloc
+     0.24%   -0.03%  [kernel.kallsyms]   [k] arch_counter_get_cntvct
+     0.23%   +0.03%  [kernel.kallsyms]   [k] _raw_spin_lock_irqsave
+     0.22%   +0.03%  libpthread-2.17.so  [.] 0x000000000000990c
+     0.21%   -0.02%  [kernel.kallsyms]   [k] sk_stream_alloc_skb
+     0.21%   +0.04%  [kernel.kallsyms]   [k] __slab_free
+     0.21%   +0.02%  [kernel.kallsyms]   [k] ip_finish_output2
+     0.20%   -0.04%  [kernel.kallsyms]   [k] sched_clock
+     0.19%   -0.03%  [kernel.kallsyms]   [k] _raw_spin_lock_bh
+     0.18%   -0.05%  [kernel.kallsyms]   [k] tcp_established_options
+     0.18%   -0.03%  [kernel.kallsyms]   [k] tcp_push
+     0.18%   -0.02%  [kernel.kallsyms]   [k] __skb_clone
+     0.17%   -0.03%  [kernel.kallsyms]   [k] ip_output
+     0.16%   +0.04%  [kernel.kallsyms]   [k] __vfs_write
+     0.15%   +0.00%  [kernel.kallsyms]   [k] _cond_resched
+     0.15%   -0.02%  [kernel.kallsyms]   [k] ip_queue_xmit
+     0.13%   +0.02%  [kernel.kallsyms]   [k] alloc_pages_current
+     0.13%   +0.04%  [kernel.kallsyms]   [k] new_slab
+     0.12%   -0.01%  [kernel.kallsyms]   [k] el0_svc_naked
+     0.12%   -0.02%  [kernel.kallsyms]   [k] netdev_pick_tx
+     0.12%   +0.02%  [kernel.kallsyms]   [k] ksize
+     0.12%   -0.00%  [kernel.kallsyms]   [k] swiotlb_map_page
+     0.12%   -0.02%  [kernel.kallsyms]   [k] __audit_syscall_exit
+     0.11%   +0.05%  [kernel.kallsyms]   [k] _raw_spin_unlock_irqrestore
+     0.11%   +0.00%  [kernel.kallsyms]   [k] tcp_stream_memory_free
+     0.11%   -0.04%  [kernel.kallsyms]   [k] tcp_check_space
+     0.11%   -0.10%  [kernel.kallsyms]   [k] hns_nic_tx_poll_one
+     0.10%   -0.00%  [kernel.kallsyms]   [k] tcp_current_mss
+     0.10%   -0.04%  [kernel.kallsyms]   [k] tcp_v4_rcv
+     0.10%   -0.03%  [kernel.kallsyms]   [k] tcp_event_new_data_sent
+     0.10%   -0.01%  [kernel.kallsyms]   [k] validate_xmit_skb
+     0.10%   +0.00%  [kernel.kallsyms]   [k] __kmalloc_reserve.isra.45
+     0.10%   -0.01%  [kernel.kallsyms]   [k] tcp_init_tso_segs
+     0.09%   +0.00%  [kernel.kallsyms]   [k] __fget
+     0.09%   +0.00%  [kernel.kallsyms]   [k] vfs_write
+     0.08%   -0.03%  [kernel.kallsyms]   [k] tcp_trim_head
+     0.08%   +0.00%  [kernel.kallsyms]   [k] tcp_rtt_estimator
+     0.08%   -0.08%  [kernel.kallsyms]   [k] tcp_wfree
+     0.08%   -0.01%  [kernel.kallsyms]   [k] netif_skb_features
+     0.08%   -0.02%  [kernel.kallsyms]   [k] tcp_schedule_loss_probe
+     0.08%   +0.01%  [kernel.kallsyms]   [k] tcp_rate_skb_delivered
+     0.08%   -0.00%  [kernel.kallsyms]   [k] skb_release_head_state
+     0.08%   +0.02%  [kernel.kallsyms]   [k] __sk_dst_check
+     0.07%   -0.02%  [kernel.kallsyms]   [k] skb_clone
+     0.07%   +0.03%  [kernel.kallsyms]   [k] sk_page_frag_refill
+     0.07%   -0.02%  [kernel.kallsyms]   [k] bictcp_cong_avoid
+     0.07%   -0.00%  [kernel.kallsyms]   [k] kfree
+     0.07%   -0.04%  [kernel.kallsyms]   [k] __inet_lookup_established
+     0.07%   -0.04%  [kernel.kallsyms]   [k] dst_release
+     0.07%   -0.02%  [kernel.kallsyms]   [k] __tcp_select_window
+     0.07%   +0.01%  [kernel.kallsyms]   [k] fput
+     0.07%   -0.01%  [kernel.kallsyms]   [k] __pskb_trim_head
+     0.07%   +0.03%  [kernel.kallsyms]   [k] md5_transform
+     0.07%   +0.01%  [kernel.kallsyms]   [k] __fget_light
+     0.07%   +0.01%  [kernel.kallsyms]   [k] syscall_trace_exit
+     0.07%   -0.01%  [kernel.kallsyms]   [k] tcp_rate_gen
+     0.07%   -0.02%  [kernel.kallsyms]   [k] kmem_cache_free
+     0.07%   -0.01%  [kernel.kallsyms]   [k] kmalloc_slab
+     0.06%   -0.02%  [kernel.kallsyms]   [k] clear_bit
+     0.06%   +0.00%  [kernel.kallsyms]   [k] tcp_send_mss
+     0.06%   +0.01%  [kernel.kallsyms]   [k] tcp_md5_do_lookup
+     0.06%   -0.06%  [kernel.kallsyms]   [k] get_task_policy.part.34
+     0.06%           [kernel.kallsyms]   [k] hnae_unmap_buffer
+     0.06%   +0.01%  [kernel.kallsyms]   [k] tcp_rcv_established
+     0.06%   +0.00%  [kernel.kallsyms]   [k] ipv4_mtu
+     0.06%   -0.01%  [kernel.kallsyms]   [k] tcp_tso_segs
+     0.06%   -0.02%  [kernel.kallsyms]   [k] hns_nic_rx_poll_one
+     0.06%   -0.01%  [kernel.kallsyms]   [k] __netif_receive_skb_core
+     0.06%   +0.02%  [kernel.kallsyms]   [k] inet_sendmsg
+     0.06%   -0.01%  [kernel.kallsyms]   [k] __free_page_frag
+     0.05%   -0.01%  [kernel.kallsyms]   [k] minmax_subwin_update
+     0.05%   -0.01%  [kernel.kallsyms]   [k] __ip_local_out
+     0.05%   -0.01%  [kernel.kallsyms]   [k] tcp_update_rtt_min
+     0.05%   -0.01%  [kernel.kallsyms]   [k] fsnotify
+     0.05%   -0.02%  [kernel.kallsyms]   [k] kfree_skbmem
+     0.05%   +0.01%  [kernel.kallsyms]   [k] hns_nic_maybe_stop_tso
+     0.05%   -0.01%  [kernel.kallsyms]   [k] __tcp_push_pending_frames
+     0.05%   -0.01%  [kernel.kallsyms]   [k] current_kernel_time64
+     0.05%   -0.00%  [kernel.kallsyms]   [k] sch_direct_xmit
+     0.04%   -0.01%  [kernel.kallsyms]   [k] __audit_syscall_entry
+     0.04%   +0.02%  [kernel.kallsyms]   [k] unroll_tree_refs
+     0.04%   -0.02%  [kernel.kallsyms]   [k] __release_sock
+     0.04%   +0.02%  [kernel.kallsyms]   [k] skb_network_protocol
+     0.04%   +0.00%  [kernel.kallsyms]   [k] __tcp_v4_send_check
+     0.04%   +0.01%  [kernel.kallsyms]   [k] set_bit
+     0.04%   -0.04%  [kernel.kallsyms]   [k] pskb_expand_head
+     0.04%   -0.03%  [kernel.kallsyms]   [k] net_rx_action
+     0.04%   +0.02%  [kernel.kallsyms]   [k] sock_write_iter
+     0.04%   -0.03%  [kernel.kallsyms]   [k] kmem_cache_alloc
+     0.04%           [kernel.kallsyms]   [k] hnae_free_buffer
+     0.04%   -0.00%  [kernel.kallsyms]   [k] skb_gso_validate_mtu
+     0.04%   -0.02%  [kernel.kallsyms]   [k] hns_rcbv2_int_ctrl_hw
+     0.04%   -0.01%  [kernel.kallsyms]   [k] minmax_running_min
+     0.04%   +0.02%  libc-2.17.so        [.] 0x0000000000096b14
+     0.04%   -0.01%  [kernel.kallsyms]   [k] tcp_gro_receive
+     0.04%   -0.02%  [kernel.kallsyms]   [k] hns_nic_alloc_rx_buffers.isra.40
+     0.04%   +0.00%  [kernel.kallsyms]   [k] dev_gro_receive
+     0.04%   +0.00%  [kernel.kallsyms]   [k] sock_sendmsg
+     0.03%   -0.02%  [kernel.kallsyms]   [k] dql_completed
+     0.03%   -0.01%  [kernel.kallsyms]   [k] mod_timer
+     0.03%   +0.01%  [vdso]              [.] 0x0000000000000308
+     0.03%   +0.01%  [kernel.kallsyms]   [k] tcp_release_cb
+     0.03%   -0.01%  [kernel.kallsyms]   [k] sk_stream_wait_memory
+     0.03%   -0.02%  [kernel.kallsyms]   [k] bictcp_acked
+     0.03%   +0.01%  [kernel.kallsyms]   [k] skb_gso_transport_seglen
+     0.03%   -0.02%  [kernel.kallsyms]   [k] dev_hard_start_xmit
+     0.03%   +0.02%  [kernel.kallsyms]   [k] __copy_skb_header
+     0.03%   +0.00%  [kernel.kallsyms]   [k] iov_iter_init
+     0.03%   +0.01%  [kernel.kallsyms]   [k] ip_finish_output
+     0.03%   -0.02%  [kernel.kallsyms]   [k] sys_write
+     0.03%   -0.02%  [kernel.kallsyms]   [k] inet_ehashfn
+     0.03%   +0.00%  [kernel.kallsyms]   [k] ipv4_dst_check
+     0.03%   +0.01%  [kernel.kallsyms]   [k] __swiotlb_map_page
+     0.03%   +0.00%  [kernel.kallsyms]   [k] ip_send_check
+     0.03%   -0.00%  [kernel.kallsyms]   [k] skb_push
+     0.03%   -0.00%  [kernel.kallsyms]   [k] ip_rcv
+     0.03%   -0.00%  [kernel.kallsyms]   [k] __pi_memcpy
+     0.03%   -0.01%  [kernel.kallsyms]   [k] neigh_resolve_output
+     0.03%   -0.01%  [kernel.kallsyms]   [k] tcp_add_backlog
+     0.03%   -0.00%  [kernel.kallsyms]   [k] ip_rcv_finish
+     0.03%   +0.01%  [kernel.kallsyms]   [k] run_timer_softirq
+     0.03%   +0.01%  [kernel.kallsyms]   [k] setup_object.isra.64
+     0.03%   +0.01%  [kernel.kallsyms]   [k] validate_xmit_skb_list
+     0.03%   +0.01%  [kernel.kallsyms]   [k] lock_sock_nested
+     0.03%   -0.01%  [kernel.kallsyms]   [k] policy_zonelist
+     0.03%   -0.03%  [kernel.kallsyms]   [k] __swiotlb_unmap_page
+     0.03%   +0.01%  [kernel.kallsyms]   [k] tcp_update_pacing_rate
+     0.03%   -0.02%  [kernel.kallsyms]   [k] test_and_clear_bit
+     0.02%   -0.00%  [kernel.kallsyms]   [k] rw_verify_area
+     0.02%   +0.00%  [kernel.kallsyms]   [k] tcp_v4_md5_lookup
+     0.02%   +0.01%  [kernel.kallsyms]   [k] policy_nodemask
+     0.02%   -0.01%  [kernel.kallsyms]   [k] tcp_small_queue_check.isra.27
+     0.02%   +0.00%  [kernel.kallsyms]   [k] tcp_rack_advance
+     0.02%   -0.00%  [kernel.kallsyms]   [k] dput
+     0.02%   -0.01%  [kernel.kallsyms]   [k] __page_cache_release
+     0.02%           [kernel.kallsyms]   [k] consume_skb
+     0.02%   -0.01%  [kernel.kallsyms]   [k] skb_release_all
+     0.02%   +0.01%  [kernel.kallsyms]   [k] release_sock
+     0.02%   -0.02%  [kernel.kallsyms]   [k] __dev_kfree_skb_any
+     0.02%           [kernel.kallsyms]   [k] unmap_single
+     0.02%   -0.00%  [kernel.kallsyms]   [k] _raw_spin_unlock_bh
+     0.02%   -0.01%  [kernel.kallsyms]   [k] __schedule
+     0.02%   -0.01%  [kernel.kallsyms]   [k] mntput
+     0.02%   +0.00%  [kernel.kallsyms]   [k] ktime_get_with_offset
+     0.02%   -0.00%  [kernel.kallsyms]   [k] tcp_parse_aligned_timestamp.part.40
+     0.02%   -0.01%  [kernel.kallsyms]   [k] tcp_set_rto
+     0.02%   -0.00%  [kernel.kallsyms]   [k] tcp_options_write
+     0.02%   -0.01%  [kernel.kallsyms]   [k] raw_local_deliver
+     0.02%   +0.02%  [kernel.kallsyms]   [k] inet_gro_receive
+     0.02%   +0.00%  [kernel.kallsyms]   [k] hns_nic_rx_fini_pro_v2
+     0.02%           [kernel.kallsyms]   [k] sk_free
+     0.02%   +0.00%  [kernel.kallsyms]   [k] tcp_v4_do_rcv
+     0.02%   -0.01%  [kernel.kallsyms]   [k] tcp_v4_send_check
+     0.02%   -0.00%  [kernel.kallsyms]   [k] syscall_trace_enter
+     0.02%   -0.00%  [kernel.kallsyms]   [k] tcp_rearm_rto
+     0.02%   -0.01%  [kernel.kallsyms]   [k] prepare_to_wait
+     0.01%   -0.01%  [kernel.kallsyms]   [k] PageHuge
+     0.01%   +0.00%  [kernel.kallsyms]   [k] schedule
+     0.01%   +0.01%  [kernel.kallsyms]   [k] tcp_rate_skb_sent
+     0.01%   +0.00%  [kernel.kallsyms]   [k] swiotlb_dma_mapping_error
+     0.01%   -0.00%  [kernel.kallsyms]   [k] netif_receive_skb_internal
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __build_skb
+     0.01%   +0.01%  [kernel.kallsyms]   [k] get_random_int
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __alloc_page_frag
+     0.01%   +0.02%  [kernel.kallsyms]   [k] __usecs_to_jiffies
+     0.01%   +0.02%  [kernel.kallsyms]   [k] security_file_permission
+     0.01%   +0.00%  [kernel.kallsyms]   [k] __put_compound_page
+     0.01%   +0.00%  [kernel.kallsyms]   [k] ret_to_user
+     0.01%   +0.00%  [kernel.kallsyms]   [k] path_put
+     0.01%   -0.01%  [kernel.kallsyms]   [k] sk_filter_trim_cap
+     0.01%   -0.00%  [kernel.kallsyms]   [k] hns_nic_net_xmit
+     0.01%   -0.01%  [kernel.kallsyms]   [k] skb_gro_reset_offset
+     0.01%   -0.00%  [kernel.kallsyms]   [k] ip_local_deliver_finish
+     0.01%   +0.01%  [kernel.kallsyms]   [k] ip_local_out
+     0.01%   -0.01%  [kernel.kallsyms]   [k] mem_cgroup_uncharge
+     0.01%   +0.00%  [kernel.kallsyms]   [k] tcp_v4_early_demux
+     0.01%   +0.01%  [kernel.kallsyms]   [k] schedule_timeout
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __fsnotify_parent
+     0.01%   -0.00%  [kernel.kallsyms]   [k] tcp4_gro_receive
+     0.01%   -0.01%  [kernel.kallsyms]   [k] tcp_tasklet_func
+     0.01%           [kernel.kallsyms]   [k] tasklet_action
+     0.01%   -0.00%  [kernel.kallsyms]   [k] tcp_filter
+     0.01%   +0.00%  [kernel.kallsyms]   [k] csum_tcpudp_nofold
+     0.01%           [kernel.kallsyms]   [k] test_and_set_bit
+     0.01%   -0.01%  [kernel.kallsyms]   [k] hns_nic_rx_up_pro
+     0.01%   +0.00%  [kernel.kallsyms]   [k] sk_reset_timer
+     0.01%   +0.00%  [kernel.kallsyms]   [k] __kfree_skb
+     0.01%   -0.01%  [kernel.kallsyms]   [k] hns_nic_common_poll
+     0.01%   +0.01%  [kernel.kallsyms]   [k] get_seconds
+     0.01%   +0.00%  [kernel.kallsyms]   [k] rebalance_domains
+     0.01%   +0.00%  [kernel.kallsyms]   [k] __sk_flush_backlog
+     0.01%   +0.01%  [kernel.kallsyms]   [k] __sys_trace
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __napi_alloc_skb
+     0.01%   -0.00%  [kernel.kallsyms]   [k] eth_header
+     0.01%   +0.01%  [kernel.kallsyms]   [k] put_cpu_partial
+     0.01%   -0.00%  [kernel.kallsyms]   [k] napi_gro_receive
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __fdget_pos
+     0.01%   -0.00%  [kernel.kallsyms]   [k] do_softirq.part.14
+     0.00%   -0.00%  [kernel.kallsyms]   [k] free_compound_page
+     0.00%   +0.00%  [kernel.kallsyms]   [k] rcu_bh_qs
+     0.00%   -0.00%  [kernel.kallsyms]   [k] __sys_trace_return
+     0.00%   +0.00%  ld-2.17.so          [.] 0x000000000000887c
+     0.00%           [kernel.kallsyms]   [k] hns_nic_tx_fini_pro_v2
+     0.00%   +0.00%  [kernel.kallsyms]   [k] eth_type_trans
+     0.00%   -0.00%  [kernel.kallsyms]   [k] ip_local_deliver
+     0.00%   -0.00%  [kernel.kallsyms]   [k] sk_stream_write_space
+     0.00%   -0.00%  [kernel.kallsyms]   [k] note_gp_changes
+     0.00%   -0.00%  [kernel.kallsyms]   [k] pgdat_reclaimable_pages
+     0.00%   -0.00%  [kernel.kallsyms]   [k] rcu_process_callbacks
+     0.00%           [kernel.kallsyms]   [k] jiffies_to_usecs
+     0.00%   -0.00%  [kernel.kallsyms]   [k] tcp_v4_inbound_md5_hash
+     0.00%           [kernel.kallsyms]   [k] run_rebalance_domains
+     0.00%   +0.00%  [kernel.kallsyms]   [k] _raw_spin_trylock
+     0.00%           [kernel.kallsyms]   [k] __vma_link_file
+     0.00%   -0.00%  [kernel.kallsyms]   [k] tcp_tsq_handler.part.32
+     0.00%           [kernel.kallsyms]   [k] skb_headers_offset_update
+     0.00%           [kernel.kallsyms]   [k] hns_aev2_toggle_ring_irq
+     0.00%   +0.02%  [kernel.kallsyms]   [k] tcp_data_queue
+     0.00%   +0.00%  [kernel.kallsyms]   [k] __netif_receive_skb
+     0.00%   +0.00%  [kernel.kallsyms]   [k] __sys_trace_return_skipped
+     0.00%           [kernel.kallsyms]   [k] handle_mm_fault
+     0.00%   +0.00%  [kernel.kallsyms]   [k] skb_split
+     0.00%   +0.03%  [kernel.kallsyms]   [k] tcp_validate_incoming
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_sndbuf_expand
+     0.00%           [kernel.kallsyms]   [k] swiotlb_unmap_page
+     0.00%           [kernel.kallsyms]   [k] finish_wait
+     0.00%   +0.00%  [kernel.kallsyms]   [k] update_blocked_averages
+     0.00%           [kernel.kallsyms]   [k] lock_timer_base
+     0.00%   +0.00%  [kernel.kallsyms]   [k] skb_free_head
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_parse_md5sig_option
+     0.00%           [kernel.kallsyms]   [k] get_v2rx_desc_bnum
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_nagle_check
+     0.00%   +0.01%  [kernel.kallsyms]   [k] __put_page
+     0.00%           [kernel.kallsyms]   [k] cap_mmap_addr
+     0.00%           [kernel.kallsyms]   [k] sys_mprotect
+     0.00%   -0.00%  [kernel.kallsyms]   [k] perf_event_exec
+             +0.01%  [kernel.kallsyms]   [k] tcp_urg
+             +0.00%  [kernel.kallsyms]   [k] ptep_clear_flush
+             +0.00%  [kernel.kallsyms]   [k] arch_counter_read
+             +0.00%  [kernel.kallsyms]   [k] tcp_fragment_tstamp
+             +0.00%  [kernel.kallsyms]   [k] mutex_unlock
+             +0.00%  [kernel.kallsyms]   [k] tcp_rate_check_app_limited
+             +0.00%  [kernel.kallsyms]   [k] mm_find_pmd
+             +0.00%  [kernel.kallsyms]   [k] _find_next_bit.part.0
+             +0.00%  [kernel.kallsyms]   [k] sk_forced_mem_schedule
+             +0.00%  [kernel.kallsyms]   [k] __wake_up_bit
+             +0.00%  [kernel.kallsyms]   [k] free_hot_cold_page
+
+# Event 'cs'
+#
+# Baseline    Delta  Shared Object      Symbol                     
+# ........  .......  .................  ...........................
+#
+    99.95%   +0.03%  [kernel.kallsyms]  [k] schedule
+     0.05%   -0.03%  [kernel.kallsyms]  [k] preempt_schedule_common
+
+# Event 'cycles'
+#
+# Baseline    Delta  Shared Object       Symbol                                 
+# ........  .......  ..................  .......................................
+#
+    61.91%   +2.46%  [kernel.kallsyms]   [k] __arch_copy_from_user
+     3.48%   -0.05%  [kernel.kallsyms]   [k] get_page_from_freelist
+     2.97%   -0.15%  [kernel.kallsyms]   [k] tcp_sendmsg
+     1.54%   -0.76%  [kernel.kallsyms]   [k] __do_softirq
+     1.38%   -0.03%  [kernel.kallsyms]   [k] hns_nic_net_xmit_hw
+     1.11%   +0.05%  [kernel.kallsyms]   [k] finish_task_switch
+     0.98%   -0.09%  [kernel.kallsyms]   [k] copy_from_iter
+     0.93%   +0.01%  [kernel.kallsyms]   [k] hns_nic_select_queue
+     0.89%   +0.12%  [kernel.kallsyms]   [k] skb_page_frag_refill
+     0.83%   -0.01%  [kernel.kallsyms]   [k] __alloc_skb
+     0.82%   +0.05%  [kernel.kallsyms]   [k] __kmalloc_node_track_caller
+     0.75%   +0.07%  [kernel.kallsyms]   [k] kmem_cache_alloc_node
+     0.69%   +0.10%  [kernel.kallsyms]   [k] __free_pages_ok
+     0.63%   -0.11%  [kernel.kallsyms]   [k] tcp_ack
+     0.61%   -0.06%  [kernel.kallsyms]   [k] _raw_spin_lock
+     0.55%   +0.00%  [kernel.kallsyms]   [k] tcp_write_xmit
+     0.55%   -0.03%  libpthread-2.17.so  [.] 0x0000000000009990
+     0.54%   +0.08%  [kernel.kallsyms]   [k] __local_bh_enable_ip
+     0.52%   -0.14%  [kernel.kallsyms]   [k] skb_release_data
+     0.50%   -0.05%  [kernel.kallsyms]   [k] tcp_transmit_skb
+     0.46%   +0.07%  iperf               [.] 0x0000000000001e24
+     0.43%   -0.00%  [kernel.kallsyms]   [k] __alloc_pages_nodemask
+     0.42%   +0.03%  [kernel.kallsyms]   [k] skb_entail
+     0.42%   -0.08%  [kernel.kallsyms]   [k] __slab_alloc
+     0.42%   -0.06%  [kernel.kallsyms]   [k] __slab_free
+     0.34%   -0.00%  [kernel.kallsyms]   [k] fill_v2_desc
+     0.32%   -0.02%  [kernel.kallsyms]   [k] _raw_spin_lock_bh
+     0.28%   +0.03%  [kernel.kallsyms]   [k] el0_svc_naked
+     0.28%   +0.01%  [kernel.kallsyms]   [k] __zone_watermark_ok
+     0.27%   -0.07%  [kernel.kallsyms]   [k] __dev_queue_xmit
+     0.26%   -0.04%  [kernel.kallsyms]   [k] ip_finish_output2
+     0.25%   -0.04%  [kernel.kallsyms]   [k] arch_counter_get_cntvct
+     0.25%   -0.06%  [kernel.kallsyms]   [k] hns_nic_rx_poll_one
+     0.24%   +0.04%  [kernel.kallsyms]   [k] __audit_syscall_exit
+     0.24%   +0.08%  [kernel.kallsyms]   [k] _raw_spin_unlock_irqrestore
+     0.22%   -0.01%  [kernel.kallsyms]   [k] kfree
+     0.22%   -0.01%  [kernel.kallsyms]   [k] __skb_clone
+     0.21%   +0.00%  [kernel.kallsyms]   [k] sk_stream_alloc_skb
+     0.21%   +0.01%  [kernel.kallsyms]   [k] _raw_spin_lock_irqsave
+     0.21%   +0.01%  [kernel.kallsyms]   [k] vfs_write
+     0.20%   -0.01%  [kernel.kallsyms]   [k] sched_clock
+     0.20%   -0.05%  [kernel.kallsyms]   [k] fill_tso_desc
+     0.20%   -0.19%  [kernel.kallsyms]   [k] hns_nic_tx_poll_one
+     0.20%   -0.01%  [kernel.kallsyms]   [k] __vfs_write
+     0.19%   +0.03%  [kernel.kallsyms]   [k] tcp_established_options
+     0.18%   +0.02%  [kernel.kallsyms]   [k] _cond_resched
+     0.18%   -0.03%  [kernel.kallsyms]   [k] tcp_push
+     0.18%   +0.06%  [kernel.kallsyms]   [k] tcp_current_mss
+     0.16%   -0.07%  [kernel.kallsyms]   [k] hns_rcbv2_int_ctrl_hw
+     0.16%   -0.02%  [kernel.kallsyms]   [k] ip_output
+     0.15%   -0.02%  [kernel.kallsyms]   [k] ip_queue_xmit
+     0.14%   -0.01%  [vdso]              [.] 0x0000000000000300
+     0.14%   +0.02%  [kernel.kallsyms]   [k] validate_xmit_skb
+     0.14%   -0.02%  [kernel.kallsyms]   [k] tcp_rcv_established
+     0.14%   -0.03%  [kernel.kallsyms]   [k] syscall_trace_exit
+     0.14%   -0.02%  [kernel.kallsyms]   [k] __fget
+     0.13%   +0.04%  [kernel.kallsyms]   [k] get_task_policy.part.34
+     0.13%   -0.06%  [kernel.kallsyms]   [k] netif_skb_features
+     0.13%   -0.02%  [kernel.kallsyms]   [k] tcp_stream_memory_free
+     0.13%   -0.01%  [kernel.kallsyms]   [k] ksize
+     0.12%   +0.09%  [kernel.kallsyms]   [k] new_slab
+     0.12%   +0.05%  [kernel.kallsyms]   [k] alloc_pages_current
+     0.12%   -0.00%  [kernel.kallsyms]   [k] policy_zonelist
+     0.12%   -0.02%  [kernel.kallsyms]   [k] hns_nic_alloc_rx_buffers.isra.40
+     0.12%   -0.02%  [kernel.kallsyms]   [k] __free_page_frag
+     0.12%   -0.03%  [kernel.kallsyms]   [k] tcp_init_tso_segs
+     0.11%   -0.03%  [kernel.kallsyms]   [k] clear_bit
+     0.11%   +0.02%  [kernel.kallsyms]   [k] fput
+     0.11%   -0.04%  [kernel.kallsyms]   [k] __netif_receive_skb_core
+     0.11%   -0.03%  [kernel.kallsyms]   [k] tcp_event_new_data_sent
+     0.11%   -0.05%  [kernel.kallsyms]   [k] tcp_v4_rcv
+     0.11%   -0.02%  [kernel.kallsyms]   [k] hns_nic_rx_fini_pro_v2
+     0.11%   -0.04%  [kernel.kallsyms]   [k] tcp_trim_head
+     0.11%   -0.02%  [kernel.kallsyms]   [k] policy_nodemask
+     0.11%   -0.02%  [kernel.kallsyms]   [k] kmem_cache_free
+     0.11%   -0.02%  [kernel.kallsyms]   [k] skb_release_head_state
+     0.11%   -0.06%  [kernel.kallsyms]   [k] kfree_skbmem
+     0.11%   -0.02%  [kernel.kallsyms]   [k] skb_clone
+     0.10%   -0.03%  [kernel.kallsyms]   [k] swiotlb_map_page
+     0.10%   +0.02%  [kernel.kallsyms]   [k] tcp_send_mss
+     0.10%           [kernel.kallsyms]   [k] tcp_wfree
+     0.10%   +0.00%  [kernel.kallsyms]   [k] tcp_md5_do_lookup
+     0.10%   -0.03%  [kernel.kallsyms]   [k] __release_sock
+     0.10%   -0.00%  [kernel.kallsyms]   [k] __pskb_trim_head
+     0.10%   -0.05%  [kernel.kallsyms]   [k] ip_finish_output
+     0.10%   +0.02%  [kernel.kallsyms]   [k] __fget_light
+     0.09%   -0.01%  [kernel.kallsyms]   [k] dst_release
+     0.09%   -0.06%  [kernel.kallsyms]   [k] net_rx_action
+     0.09%   -0.03%  [kernel.kallsyms]   [k] set_bit
+     0.09%   -0.02%  [kernel.kallsyms]   [k] sock_write_iter
+     0.09%   +0.03%  libc-2.17.so        [.] 0x0000000000075cf8
+     0.09%   +0.01%  [kernel.kallsyms]   [k] sch_direct_xmit
+     0.09%   +0.04%  [kernel.kallsyms]   [k] fsnotify
+     0.08%   +0.01%  [kernel.kallsyms]   [k] current_kernel_time64
+     0.08%   +0.01%  [kernel.kallsyms]   [k] unroll_tree_refs
+     0.08%   +0.00%  [kernel.kallsyms]   [k] netdev_pick_tx
+     0.08%   -0.01%  [kernel.kallsyms]   [k] sk_stream_wait_memory
+     0.08%   +0.01%  [kernel.kallsyms]   [k] tcp_rate_skb_delivered
+     0.08%   +0.00%  [kernel.kallsyms]   [k] sock_sendmsg
+     0.08%   -0.04%  [kernel.kallsyms]   [k] dev_gro_receive
+     0.08%   +0.01%  [kernel.kallsyms]   [k] tcp_rtt_estimator
+     0.08%   -0.06%  [kernel.kallsyms]   [k] hns_nic_common_poll
+     0.07%   +0.01%  [kernel.kallsyms]   [k] inet_sendmsg
+     0.07%   +0.00%  [kernel.kallsyms]   [k] ipv4_mtu
+     0.07%   +0.02%  [kernel.kallsyms]   [k] sk_page_frag_refill
+     0.07%   -0.05%  [kernel.kallsyms]   [k] test_and_clear_bit
+     0.07%   -0.01%  [kernel.kallsyms]   [k] tcp_schedule_loss_probe
+     0.07%   +0.00%  [kernel.kallsyms]   [k] tcp_tso_segs
+     0.07%   -0.01%  [kernel.kallsyms]   [k] mod_timer
+     0.07%   -0.01%  [kernel.kallsyms]   [k] tcp_release_cb
+     0.07%   +0.03%  [kernel.kallsyms]   [k] md5_transform
+     0.07%   -0.03%  [kernel.kallsyms]   [k] hns_nic_maybe_stop_tso
+     0.07%   +0.01%  [kernel.kallsyms]   [k] kmalloc_slab
+     0.07%   -0.02%  [kernel.kallsyms]   [k] minmax_subwin_update
+     0.07%   -0.02%  [kernel.kallsyms]   [k] ipv4_dst_check
+     0.07%   +0.01%  [kernel.kallsyms]   [k] __kmalloc_reserve.isra.45
+     0.07%   -0.01%  [kernel.kallsyms]   [k] tcp_rate_gen
+     0.07%   +0.01%  [kernel.kallsyms]   [k] __copy_skb_header
+     0.06%   -0.02%  [kernel.kallsyms]   [k] __tcp_v4_send_check
+     0.06%   -0.05%  [kernel.kallsyms]   [k] pskb_expand_head
+     0.06%   +0.00%  [kernel.kallsyms]   [k] __sk_dst_check
+     0.06%   -0.02%  [kernel.kallsyms]   [k] bictcp_cong_avoid
+     0.06%   -0.02%  [kernel.kallsyms]   [k] tcp_update_pacing_rate
+     0.06%   +0.01%  [kernel.kallsyms]   [k] tcp_check_space
+     0.06%   -0.00%  [kernel.kallsyms]   [k] skb_network_protocol
+     0.06%   -0.02%  [kernel.kallsyms]   [k] __pi_memcpy
+     0.05%   -0.00%  [kernel.kallsyms]   [k] dput
+     0.05%   +0.00%  [kernel.kallsyms]   [k] __ip_local_out
+     0.05%   -0.02%  [kernel.kallsyms]   [k] bictcp_acked
+     0.05%   -0.01%  [kernel.kallsyms]   [k] __tcp_select_window
+     0.05%   -0.03%  [kernel.kallsyms]   [k] skb_gso_validate_mtu
+     0.05%   -0.00%  [kernel.kallsyms]   [k] __inet_lookup_established
+     0.05%   -0.01%  [kernel.kallsyms]   [k] sys_write
+     0.05%   -0.02%  [kernel.kallsyms]   [k] syscall_trace_enter
+     0.05%   -0.01%  [kernel.kallsyms]   [k] inet_gro_receive
+     0.05%   +0.00%  [kernel.kallsyms]   [k] ip_rcv
+     0.05%   +0.01%  [kernel.kallsyms]   [k] __audit_syscall_entry
+     0.05%   -0.01%  [kernel.kallsyms]   [k] ip_send_check
+     0.05%   +0.00%  [kernel.kallsyms]   [k] __tcp_push_pending_frames
+     0.05%   -0.01%  [kernel.kallsyms]   [k] validate_xmit_skb_list
+     0.05%   +0.02%  [kernel.kallsyms]   [k] security_file_permission
+     0.05%   -0.01%  [kernel.kallsyms]   [k] dev_hard_start_xmit
+     0.05%   -0.01%  [kernel.kallsyms]   [k] hns_nic_net_xmit
+     0.04%   -0.01%  [kernel.kallsyms]   [k] ip_rcv_finish
+     0.04%   -0.01%  [kernel.kallsyms]   [k] tcp_v4_do_rcv
+     0.04%   +0.01%  [kernel.kallsyms]   [k] tcp_v4_md5_lookup
+     0.04%   +0.01%  [kernel.kallsyms]   [k] tcp_set_rto
+     0.04%   +0.01%  [kernel.kallsyms]   [k] rw_verify_area
+     0.04%   -0.02%  [kernel.kallsyms]   [k] tcp_gro_receive
+     0.04%   -0.03%  [kernel.kallsyms]   [k] mem_cgroup_uncharge
+     0.04%   -0.02%  [kernel.kallsyms]   [k] tcp_v4_early_demux
+     0.04%   -0.00%  [kernel.kallsyms]   [k] skb_push
+     0.04%   -0.00%  [kernel.kallsyms]   [k] tcp_update_rtt_min
+     0.04%   -0.01%  [kernel.kallsyms]   [k] kmem_cache_alloc
+     0.04%   +0.01%  [kernel.kallsyms]   [k] tcp_parse_aligned_timestamp.part.40
+     0.03%   +0.02%  [kernel.kallsyms]   [k] lock_sock_nested
+     0.03%   +0.00%  [kernel.kallsyms]   [k] __page_cache_release
+     0.03%   -0.00%  [kernel.kallsyms]   [k] tcp_rearm_rto
+     0.03%   -0.01%  [kernel.kallsyms]   [k] tcp_v4_send_check
+     0.03%   +0.00%  [kernel.kallsyms]   [k] release_sock
+     0.03%           [kernel.kallsyms]   [k] hnae_free_buffer
+     0.03%   -0.02%  [kernel.kallsyms]   [k] tcp_small_queue_check.isra.27
+     0.03%           [kernel.kallsyms]   [k] hnae_unmap_buffer
+     0.03%   +0.00%  [kernel.kallsyms]   [k] __swiotlb_map_page
+     0.03%   +0.00%  [kernel.kallsyms]   [k] __put_compound_page
+     0.03%   +0.00%  [kernel.kallsyms]   [k] __sys_trace
+     0.03%   -0.01%  [kernel.kallsyms]   [k] skb_release_all
+     0.03%   +0.00%  [kernel.kallsyms]   [k] __schedule
+     0.03%   -0.01%  [kernel.kallsyms]   [k] mntput
+     0.03%   -0.01%  [kernel.kallsyms]   [k] skb_gso_transport_seglen
+     0.03%   -0.00%  [kernel.kallsyms]   [k] tcp_rack_advance
+     0.03%   +0.00%  [kernel.kallsyms]   [k] path_put
+     0.03%   -0.03%  [kernel.kallsyms]   [k] tcp_tasklet_func
+     0.03%           [kernel.kallsyms]   [k] sk_free
+     0.03%   +0.01%  [kernel.kallsyms]   [k] minmax_running_min
+     0.03%   +0.03%  [kernel.kallsyms]   [k] schedule_timeout
+     0.03%   +0.02%  [kernel.kallsyms]   [k] run_timer_softirq
+     0.03%   -0.00%  [kernel.kallsyms]   [k] __usecs_to_jiffies
+     0.03%   -0.02%  [kernel.kallsyms]   [k] neigh_resolve_output
+     0.02%   -0.02%  [kernel.kallsyms]   [k] ip_local_deliver_finish
+     0.02%   +0.01%  [kernel.kallsyms]   [k] setup_object.isra.64
+     0.02%   +0.00%  [kernel.kallsyms]   [k] get_seconds
+     0.02%   +0.01%  [kernel.kallsyms]   [k] schedule
+     0.02%   -0.01%  [kernel.kallsyms]   [k] _raw_spin_unlock_bh
+     0.02%   -0.02%  [kernel.kallsyms]   [k] test_and_set_bit
+     0.02%   -0.02%  [kernel.kallsyms]   [k] dql_completed
+     0.02%   -0.00%  [kernel.kallsyms]   [k] ktime_get_with_offset
+     0.02%   -0.00%  [kernel.kallsyms]   [k] tcp_add_backlog
+     0.02%   -0.01%  [kernel.kallsyms]   [k] raw_local_deliver
+     0.02%   +0.00%  [kernel.kallsyms]   [k] ip_local_out
+     0.02%   +0.00%  [kernel.kallsyms]   [k] ret_to_user
+     0.02%   -0.00%  [kernel.kallsyms]   [k] iov_iter_init
+     0.02%   +0.01%  [kernel.kallsyms]   [k] prepare_to_wait
+     0.02%   +0.01%  [kernel.kallsyms]   [k] PageHuge
+     0.02%   +0.00%  [kernel.kallsyms]   [k] __fdget_pos
+     0.02%           [kernel.kallsyms]   [k] tasklet_action
+     0.02%   -0.00%  [kernel.kallsyms]   [k] __fsnotify_parent
+     0.02%           [kernel.kallsyms]   [k] consume_skb
+     0.02%           [kernel.kallsyms]   [k] __dev_kfree_skb_any
+     0.02%           [kernel.kallsyms]   [k] __swiotlb_unmap_page
+     0.02%   +0.00%  [kernel.kallsyms]   [k] __kfree_skb
+     0.02%   -0.01%  [kernel.kallsyms]   [k] eth_type_trans
+     0.02%   +0.02%  [kernel.kallsyms]   [k] get_random_int
+     0.02%   +0.00%  [kernel.kallsyms]   [k] inet_ehashfn
+     0.01%   -0.00%  [kernel.kallsyms]   [k] csum_tcpudp_nofold
+     0.01%   -0.01%  [kernel.kallsyms]   [k] tcp_filter
+     0.01%   +0.01%  [kernel.kallsyms]   [k] swiotlb_dma_mapping_error
+     0.01%   -0.00%  [kernel.kallsyms]   [k] tcp_options_write
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __build_skb
+     0.01%   +0.00%  [kernel.kallsyms]   [k] tcp_rate_skb_sent
+     0.01%   +0.00%  [kernel.kallsyms]   [k] tcp4_gro_receive
+     0.01%   +0.01%  [kernel.kallsyms]   [k] skb_split
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __sys_trace_return
+     0.01%   -0.01%  [kernel.kallsyms]   [k] eth_header
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __alloc_page_frag
+     0.01%   -0.01%  [kernel.kallsyms]   [k] skb_gro_reset_offset
+     0.01%   +0.00%  [kernel.kallsyms]   [k] __sk_flush_backlog
+     0.01%   +0.01%  [kernel.kallsyms]   [k] rebalance_domains
+     0.01%   +0.00%  [kernel.kallsyms]   [k] rcu_bh_qs
+     0.01%   -0.00%  ld-2.17.so          [.] 0x000000000000a8bc
+     0.01%   -0.00%  [kernel.kallsyms]   [k] netif_receive_skb_internal
+     0.01%   -0.01%  [kernel.kallsyms]   [k] free_compound_page
+     0.01%           [kernel.kallsyms]   [k] rcu_process_callbacks
+     0.01%   -0.00%  [kernel.kallsyms]   [k] sk_filter_trim_cap
+     0.01%   -0.00%  [kernel.kallsyms]   [k] ip_local_deliver
+     0.01%   +0.02%  [kernel.kallsyms]   [k] do_nanosleep
+     0.01%           [kernel.kallsyms]   [k] napi_complete_done
+     0.01%   +0.01%  [kernel.kallsyms]   [k] sk_reset_timer
+     0.01%   -0.00%  [kernel.kallsyms]   [k] unmap_single
+     0.01%   -0.00%  [kernel.kallsyms]   [k] skb_headers_offset_update
+     0.01%   +0.00%  [kernel.kallsyms]   [k] skb_free_head
+     0.01%   -0.00%  [kernel.kallsyms]   [k] hns_nic_rx_up_pro
+     0.01%   -0.00%  [kernel.kallsyms]   [k] __napi_alloc_skb
+     0.01%   -0.00%  [kernel.kallsyms]   [k] do_softirq.part.14
+     0.01%   -0.00%  [kernel.kallsyms]   [k] finish_wait
+     0.01%   +0.01%  [kernel.kallsyms]   [k] tcp_tsq_handler.part.32
+     0.00%   -0.00%  [kernel.kallsyms]   [k] hns_nic_tx_fini_pro_v2
+     0.00%   -0.00%  [kernel.kallsyms]   [k] tcp_parse_md5sig_option
+     0.00%   -0.00%  [kernel.kallsyms]   [k] tcp_nagle_check
+     0.00%   +0.06%  [kernel.kallsyms]   [k] tcp_validate_incoming
+     0.00%   +0.02%  [kernel.kallsyms]   [k] put_cpu_partial
+     0.00%           [kernel.kallsyms]   [k] hns_aev2_toggle_ring_irq
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_sndbuf_expand
+     0.00%   +0.01%  [kernel.kallsyms]   [k] __put_page
+     0.00%   +0.00%  [kernel.kallsyms]   [k] update_blocked_averages
+     0.00%   -0.00%  [kernel.kallsyms]   [k] jiffies_to_usecs
+     0.00%   +0.02%  [kernel.kallsyms]   [k] tcp_data_queue
+     0.00%   +0.00%  [kernel.kallsyms]   [k] napi_gro_receive
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_rate_check_app_limited
+     0.00%           [kernel.kallsyms]   [k] run_rebalance_domains
+     0.00%           [kernel.kallsyms]   [k] hrtimer_try_to_cancel
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_fragment_tstamp
+     0.00%   +0.00%  [kernel.kallsyms]   [k] ptep_clear_flush
+     0.00%   +0.01%  [kernel.kallsyms]   [k] pgdat_reclaimable_pages
+     0.00%   -0.00%  [kernel.kallsyms]   [k] dev_queue_xmit
+     0.00%   +0.00%  [kernel.kallsyms]   [k] tcp_v4_inbound_md5_hash
+     0.00%           [kernel.kallsyms]   [k] _raw_spin_lock_irq
+     0.00%           [kernel.kallsyms]   [k] __free_slab
+     0.00%           [kernel.kallsyms]   [k] vm_normal_page
+     0.00%           [kernel.kallsyms]   [k] __netif_receive_skb
+     0.00%   +0.00%  [kernel.kallsyms]   [k] arch_counter_read
+     0.00%           [kernel.kallsyms]   [k] get_v2rx_desc_bnum
+     0.00%           [kernel.kallsyms]   [k] free_hot_cold_page
+     0.00%   +0.00%  [kernel.kallsyms]   [k] __sys_trace_return_skipped
+     0.00%           [kernel.kallsyms]   [k] lock_timer_base
+     0.00%           [kernel.kallsyms]   [k] unlock_page
+     0.00%           [kernel.kallsyms]   [k] sys_mprotect
+     0.00%           [kernel.kallsyms]   [k] __unqueue_futex
+     0.00%           [kernel.kallsyms]   [k] do_futex
+     0.00%   +0.00%  [kernel.kallsyms]   [k] perf_event_addr_filters_exec
+     0.00%   +0.00%  [kernel.kallsyms]   [k] perf_event_exec
+             +0.02%  [kernel.kallsyms]   [k] tcp_urg
+             +0.01%  [kernel.kallsyms]   [k] mutex_lock
+             +0.01%  [kernel.kallsyms]   [k] _raw_spin_trylock
+             +0.01%  [kernel.kallsyms]   [k] sk_forced_mem_schedule
+             +0.01%  [kernel.kallsyms]   [k] copy_page
+             +0.00%  [kernel.kallsyms]   [k] sk_stream_write_space
+             +0.00%  [kernel.kallsyms]   [k] page_remove_rmap
+             +0.00%  [kernel.kallsyms]   [k] migrate_page_copy
+             +0.00%  [kernel.kallsyms]   [k] change_protection
+             +0.00%  [kernel.kallsyms]   [k] pfifo_fast_enqueue
+             +0.00%  [kernel.kallsyms]   [k] __vma_link_file
+             +0.00%  [kernel.kallsyms]   [k] __msecs_to_jiffies
+             +0.00%  [kernel.kallsyms]   [k] perf_iterate_ctx
+             +0.00%  [kernel.kallsyms]   [k] el0_ia
+             +0.00%  [kernel.kallsyms]   [k] futex_wait

@@ -344,7 +344,201 @@ netperf: ok
 iperf:  ok
 qperf:  ok
 netperf: ok
+
 ================================================================
+3. est1-175 64k-->4k:
+iperf: ok
+qperf: ok
+netperf: 
+================================================================
+iperf server:
+    52.76%   +8.89%  [kernel.kallsyms]   [k] __arch_copy_to_user
+     3.59%   +0.07%  [kernel.kallsyms]   [k] hns_nic_select_queue
+     3.31%   -2.91%  [kernel.kallsyms]   [k] finish_task_switch
+     3.05%   -1.20%  [kernel.kallsyms]   [k] skb_copy_datagram_iter
+     2.61%   +0.11%  [kernel.kallsyms]   [k] skb_release_data
+     1.86%   -0.83%  [kernel.kallsyms]   [k] copy_page_to_iter
+     1.86%   -0.57%  [kernel.kallsyms]   [k] tcp_gro_receive
+     1.77%   +0.07%  [kernel.kallsyms]   [k] __free_pages_ok
+     1.72%   -0.77%  [kernel.kallsyms]   [k] hns_nic_reuse_page.isra.49
+     1.63%   -0.37%  [kernel.kallsyms]   [k] __free_page_frag
+     1.42%   -0.39%  [kernel.kallsyms]   [k] inet_gro_receive
+     1.18%   -0.28%  [kernel.kallsyms]   [k] skb_gro_receive
+     1.11%   +0.13%  [kernel.kallsyms]   [k] hns_nic_net_xmit_hw
+
+zdc:
+    26.79%   +4.25%  [kernel.kallsyms]   [k] __copy_to_user
+     7.03%   -2.13%  [kernel.kallsyms]   [k] hns_nic_rx_poll_one
+     6.83%   -1.07%  [kernel.kallsyms]   [k] tcp_gro_receive
+     5.32%   -0.46%  [kernel.kallsyms]   [k] __free_page_frag
+     5.10%   -0.55%  [kernel.kallsyms]   [k] inet_gro_receive
+     4.67%   -0.50%  [kernel.kallsyms]   [k] skb_gro_receive
+     3.39%   -0.09%  [kernel.kallsyms]   [k] hns_nic_reuse_page.isra.49
+     3.09%   -0.39%  [kernel.kallsyms]   [k] do_csum
+     3.00%   -1.11%  [kernel.kallsyms]   [k] dev_gro_receive
+     2.77%   -0.25%  [kernel.kallsyms]   [k] kmem_cache_alloc
+     2.25%   +0.15%  [kernel.kallsyms]   [k] skb_release_data
+     2.23%   -0.31%  [kernel.kallsyms]   [k] kmem_cache_free
+     2.02%   -0.22%  [kernel.kallsyms]   [k] __build_skb
+
+
+iperf client:
+    69.08%   +1.62%  [kernel.kallsyms]   [k] __arch_copy_from_user
+     3.33%   +0.16%  [kernel.kallsyms]   [k] get_page_from_freelist
+     2.57%   -0.21%  [kernel.kallsyms]   [k] tcp_sendmsg
+     1.59%   +0.03%  [kernel.kallsyms]   [k] hns_nic_select_queue
+     1.14%   +0.12%  [kernel.kallsyms]   [k] skb_page_frag_refill
+     0.97%   -0.05%  [kernel.kallsyms]   [k] copy_from_iter
+     0.93%   +0.02%  [kernel.kallsyms]   [k] kmem_cache_alloc_node
+     0.91%   -0.09%  [kernel.kallsyms]   [k] __alloc_skb
+     0.87%   -0.02%  [kernel.kallsyms]   [k] hns_nic_net_xmit_hw
+     0.80%   -0.01%  [kernel.kallsyms]   [k] __free_pages_ok
+     0.74%   -0.01%  [kernel.kallsyms]   [k] __kmalloc_node_track_caller
+     0.67%   -0.36%  [kernel.kallsyms]   [k] __do_softirq
+     0.58%   -0.01%  [kernel.kallsyms]   [k] tcp_write_xmit
+     0.52%   +0.05%  [kernel.kallsyms]   [k] finish_task_switch
+     0.52%   -0.04%  [kernel.kallsyms]   [k] tcp_ack
+zdc:
+    80.16%   -1.17%  [kernel.kallsyms]   [k] __copy_from_user
+     2.96%   -0.18%  [kernel.kallsyms]   [k] tcp_sendmsg
+     1.22%   +0.00%  [kernel.kallsyms]   [k] finish_task_switch
+     1.22%   -0.18%  [kernel.kallsyms]   [k] copy_from_iter
+     1.03%   +0.10%  [kernel.kallsyms]   [k] kmem_cache_alloc_node
+     0.96%   +0.01%  [kernel.kallsyms]   [k] get_page_from_freelist
+     0.87%   +0.01%  [kernel.kallsyms]   [k] __alloc_skb
+     0.66%   -0.02%  [kernel.kallsyms]   [k] skb_page_frag_refill
+     0.63%   +0.03%  [kernel.kallsyms]   [k] __kmalloc_node_track_caller
+     0.62%   +0.19%  [kernel.kallsyms]   [k] hns_nic_select_queue
+
+
+qperf server:
+    10.01%   -0.06%  [kernel.kallsyms]   [k] __arch_copy_to_user
+     8.48%   +0.23%  [kernel.kallsyms]   [k] __local_bh_enable_ip
+     7.18%   +0.06%  libc-2.17.so        [.] 0x00000000000a4c54
+     6.33%   +0.06%  [kernel.kallsyms]   [k] _raw_spin_lock_bh
+     5.48%   +0.47%  [kernel.kallsyms]   [k] skb_copy_datagram_iter
+     3.96%   -0.02%  [kernel.kallsyms]   [k] tcp_recvmsg
+     3.80%   +0.04%  [kernel.kallsyms]   [k] el0_svc_naked
+     3.00%   -0.02%  [kernel.kallsyms]   [k] sock_read_iter
+     2.90%   -0.02%  [kernel.kallsyms]   [k] __audit_syscall_exit
+     2.83%   -0.02%  [kernel.kallsyms]   [k] __vfs_read
+     2.55%   +0.12%  [kernel.kallsyms]   [k] tcp_cleanup_rbuf
+     2.19%   -0.10%  [kernel.kallsyms]   [k] fsnotify
+     2.08%   +0.11%  [kernel.kallsyms]   [k] copy_page_to_iter
+
+1:
+    13.40%   -1.48%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+    12.89%   -0.14%  libc-2.17.so       [.] 0x00000000000cbda0
+    11.08%   -0.02%  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+     7.58%   +0.15%  [kernel.kallsyms]  [k] tcp_cleanup_rbuf
+     7.03%   -0.49%  [kernel.kallsyms]  [k] tcp_recvmsg
+     5.96%   +0.01%  [kernel.kallsyms]  [k] el0_svc_naked
+     3.79%   -0.32%  [kernel.kallsyms]  [k] fsnotify
+     3.71%   -0.37%  [kernel.kallsyms]  [k] __audit_syscall_exit
+     3.67%   +1.02%  [kernel.kallsyms]  [k] sock_read_iter
+     3.35%   +0.06%  [kernel.kallsyms]  [k] __vfs_read
+     2.54%   +0.98%  [kernel.kallsyms]  [k] inet_recvmsg
+     2.08%   -0.44%  [kernel.kallsyms]  [k] copy_page_to_iter
+
+1 estall:1.58
+    11.17%   -0.28%  libc-2.17.so       [.] 0x00000000000cbda0
+    10.12%   +0.25%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+     8.05%   -0.86%  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+     7.07%   +0.63%  [kernel.kallsyms]  [k] __check_object_size
+     5.29%   +0.30%  [kernel.kallsyms]  [k] el0_svc_naked
+     4.01%   +0.98%  [kernel.kallsyms]  [k] tcp_recvmsg
+     3.97%   +0.41%  [kernel.kallsyms]  [k] __vfs_read
+     3.31%   +0.12%  [kernel.kallsyms]  [k] __arch_copy_to_user
+     3.27%   +0.00%  [kernel.kallsyms]  [k] __audit_syscall_exit
+     3.18%   -0.35%  [kernel.kallsyms]  [k] fsnotify
+     2.77%   +0.85%  [kernel.kallsyms]  [k] sock_read_iter
+     2.74%   +0.24%  [kernel.kallsyms]  [k] tcp_cleanup_rbuf
+     2.68%   +0.31%  [kernel.kallsyms]  [k] copy_page_to_iter
+     2.60%   -0.06%  [kernel.kallsyms]  [k] security_socket_recvmsg
+     2.54%   -1.62%  [kernel.kallsyms]  [k] memblock_is_map_memory
+     2.45%   -0.28%  [kernel.kallsyms]  [k] lock_sock_nested
+
+
+2:
+    12.75%   -0.43%  libc-2.17.so       [.] 0x00000000000cbda0
+    11.92%   +0.95%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+    11.07%   +0.44%  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+     7.74%   -1.05%  [kernel.kallsyms]  [k] tcp_cleanup_rbuf
+     6.54%   -0.24%  [kernel.kallsyms]  [k] tcp_recvmsg
+     5.97%   +0.17%  [kernel.kallsyms]  [k] el0_svc_naked
+     4.69%   -0.37%  [kernel.kallsyms]  [k] sock_read_iter
+     3.52%   -1.04%  [kernel.kallsyms]  [k] inet_recvmsg
+     3.47%   -0.21%  [kernel.kallsyms]  [k] fsnotify
+     3.40%   -0.07%  [kernel.kallsyms]  [k] __vfs_read
+     3.33%   +0.21%  [kernel.kallsyms]  [k] __audit_syscall_exit
+
+
+qperf client:
+     9.33%   +0.24%  [kernel.kallsyms]   [k] __local_bh_enable_ip
+     8.10%   +0.30%  [kernel.kallsyms]   [k] tcp_sendmsg
+     8.06%   -0.12%  [kernel.kallsyms]   [k] _raw_spin_lock_bh
+     8.01%   -0.80%  [kernel.kallsyms]   [k] __arch_copy_from_user
+     6.39%   +0.26%  libc-2.17.so        [.] 0x000000000007ab2c
+     4.87%   -0.17%  [kernel.kallsyms]   [k] __audit_syscall_exit
+     4.11%   -0.11%  [kernel.kallsyms]   [k] el0_svc_naked
+     3.61%   +0.08%  [kernel.kallsyms]   [k] tcp_write_xmit
+     3.28%   +0.05%  [kernel.kallsyms]   [k] copy_from_iter
+     2.80%   +0.24%  [kernel.kallsyms]   [k] __vfs_write
+     2.24%   +0.08%  [kernel.kallsyms]   [k] sock_write_iter
+     2.19%   +0.08%  [kernel.kallsyms]   [k] lock_sock_nested
+     1.96%   +0.01%  [kernel.kallsyms]   [k] tcp_push
+
+
+1: 1.92
+    13.93%   -0.65%  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+    11.95%   +0.47%  libc-2.17.so       [.] 0x00000000000cbe60
+    11.47%   -0.81%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+     7.39%   +0.41%  [kernel.kallsyms]  [k] tcp_write_xmit
+     4.75%   +0.58%  [kernel.kallsyms]  [k] el0_svc_naked
+     4.63%   -0.70%  [kernel.kallsyms]  [k] tcp_push
+     4.47%   -0.76%  [kernel.kallsyms]  [k] tcp_sendmsg
+     3.93%   -0.34%  [kernel.kallsyms]  [k] __audit_syscall_exit
+     3.03%   +0.33%  [kernel.kallsyms]  [k] lock_sock_nested
+     2.80%   -0.75%  [kernel.kallsyms]  [k] vfs_write
+     2.57%   -0.57%  [kernel.kallsyms]  [k] __vfs_write
+     2.33%   +1.23%  [kernel.kallsyms]  [k] copy_from_iter
+     2.19%   +0.10%  [kernel.kallsyms]  [k] unroll_tree_refs
+     2.06%   -0.15%  [kernel.kallsyms]  [k] inet_sendmsg
+     1.87%   -0.29%  [kernel.kallsyms]  [k] __tcp_push_pending_frames
+     1.67%   +0.45%  [kernel.kallsyms]  [k] sock_write_iter
+     1.61%   +0.45%  [kernel.kallsyms]  [k] release_sock
+     1.59%   +0.32%  [kernel.kallsyms]  [k] syscall_trace_exit
+     1.27%   +0.03%  [kernel.kallsyms]  [k] ret_to_user
+
+1 estall:1.54
+    10.87%   -1.87%  libc-2.17.so       [.] 0x00000000000cbe60
+     9.19%   +0.54%  [kernel.kallsyms]  [k] tcp_sendmsg
+     8.71%   +0.73%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+     7.23%   -0.45%  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+     6.85%   -0.00%  [kernel.kallsyms]  [k] __check_object_size
+     4.73%   -0.22%  [kernel.kallsyms]  [k] tcp_write_xmit
+     3.90%   -0.14%  [kernel.kallsyms]  [k] __arch_copy_from_user
+     3.63%   -0.05%  [kernel.kallsyms]  [k] copy_from_iter
+     3.41%   +0.33%  [kernel.kallsyms]  [k] el0_svc_naked
+     3.18%   -0.33%  [kernel.kallsyms]  [k] __vfs_write
+     2.77%   -0.40%  [kernel.kallsyms]  [k] memblock_is_map_memory
+     2.45%   +1.07%  [kernel.kallsyms]  [k] __audit_syscall_exit
+     2.45%   -0.54%  [kernel.kallsyms]  [k] lock_sock_nested
+     2.42%   +0.09%  [kernel.kallsyms]  [k] sock_write_iter
+
+
+2: 3.84
+    11.96%   +1.04%  [ker 3.84nel.kallsyms]  [k] _raw_spin_lock_bh
+    10.99%   -0.84%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+    10.20%   +1.83%  libc-2.17.so       [.] 0x00000000000cbe60
+     6.84%   -2.94%  [kernel.kallsyms]  [k] __audit_syscall_exit
+     6.47%   +2.08%  [kernel.kallsyms]  [k] tcp_write_xmit
+     5.95%   -0.87%  [kernel.kallsyms]  [k] tcp_sendmsg
+     5.36%   -2.85%  [kernel.kallsyms]  [k] __vfs_write
+     5.28%   -0.36%  [kernel.kallsyms]  [k] tcp_push
+     4.60%   +0.92%  [kernel.kallsyms]  [k] el0_svc_naked
+     4.18%   -1.47%  [kernel.kallsyms]  [k] vfs_write
+     2.02%   +0.15%  [kernel.kallsyms]  [k] release_sock
 
 ####################################################################
 update kernel and modules
