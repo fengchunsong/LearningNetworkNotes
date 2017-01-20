@@ -510,6 +510,23 @@ qperf client:
      1.59%   +0.32%  [kernel.kallsyms]  [k] syscall_trace_exit
      1.27%   +0.03%  [kernel.kallsyms]  [k] ret_to_user
 
+ubuntu:1.86
+    13.21%   +1.22%  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+    12.18%   +0.02%  [kernel.kallsyms]  [k] __local_bh_enable_ip
+    11.65%   +0.42%  libc-2.23.so       [.] 0x00000000000ba2c0
+     9.13%   +0.24%  [kernel.kallsyms]  [k] tcp_sendmsg
+     7.35%   -0.07%  [kernel.kallsyms]  [k] tcp_write_xmit
+     6.84%   +0.39%  [kernel.kallsyms]  [k] copy_from_iter
+     5.61%   -0.05%  [kernel.kallsyms]  [k] el0_svc_naked
+     3.16%   +0.05%  [kernel.kallsyms]  [k] tcp_push
+     3.14%   -1.04%  [kernel.kallsyms]  [k] lock_sock_nested
+     2.57%   -0.72%  [kernel.kallsyms]  [k] fsnotify
+     1.79%   -0.46%  [kernel.kallsyms]  [k] __arch_copy_from_user
+     1.78%   +0.05%  [kernel.kallsyms]  [k] __tcp_push_pending_frames
+     1.74%   -0.09%  [kernel.kallsyms]  [k] release_sock
+     1.73%   +0.09%  [kernel.kallsyms]  [k] sock_write_iter
+
+
 1 estall:1.54
     10.87%   -1.87%  libc-2.17.so       [.] 0x00000000000cbe60
      9.19%   +0.54%  [kernel.kallsyms]  [k] tcp_sendmsg
@@ -540,6 +557,27 @@ qperf client:
      4.18%   -1.47%  [kernel.kallsyms]  [k] vfs_write
      2.02%   +0.15%  [kernel.kallsyms]  [k] release_sock
 
+
+####################################################################
+single level:
+[root@CentOS ~]# systemctl list-units --type=service
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  kmod-static-nodes.service   loaded active exited  Create list of required stat
+  rescue.service              loaded active running Rescue Shell
+  rhel-readonly.service       loaded active exited  Configure read-only root sup
+  systemd-journal-flush.service loaded active exited  Flush Journal to Persisten
+  systemd-journald.service    loaded active running Journal Service
+  systemd-random-seed.service loaded active exited  Load/Save Random Seed
+  systemd-sysctl.service      loaded active exited  Apply Kernel Variables
+  systemd-tmpfiles-setup-dev.service loaded active exited  Create Static Device 
+● systemd-tmpfiles-setup.service loaded failed failed  Create Volatile Files and
+  systemd-udev-trigger.service loaded active exited  udev Coldplug all Devices
+  systemd-udevd.service       loaded active running udev Kernel Device Manager
+  systemd-update-utmp.service loaded active exited  Update UTMP about System Boo
+  systemd-vconsole-setup.service loaded active exited  Setup Virtual Console
+
+
+
 ####################################################################
 update kernel and modules
 ####################################################################
@@ -557,7 +595,128 @@ cp out/modules/lib/modules/* /lib/modules -a
 ll /mnt/Image_*
 ls /lib/firmware
 ls /lib/modules/
-
+rm -rf out
 sync
 
-	
+####################################################################
+ CMA:
+####################################################################	
+D05:
+[root@CentOS ~]# free -g
+              total        used        free      shared  buff/cache   available
+Mem:             63           4          59           0           0          54
+Swap:             0           0           0
+
+[    0.000000] Memory: 535966656K/536604608K available (10812K kernel code, 2042K rwdata, 4608K rodata, 1472K init, 7490K bss, 637952K reserved, 0K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7bdfffff0000   (126847 GB)
+[    0.000000]       .text : 0xffff000008080000 - 0xffff000008b10000   ( 10816 KB)
+[    0.000000]     .rodata : 0xffff000008b10000 - 0xffff000008fa0000   (  4672 KB)
+[    0.000000]       .init : 0xffff000008fa0000 - 0xffff000009110000   (  1472 KB)
+[    0.000000]       .data : 0xffff000009110000 - 0xffff00000930ea00   (  2043 KB)
+[    0.000000]        .bss : 0xffff00000930ea00 - 0xffff000009a5f4f0   (  7491 KB)
+[    0.000000]     fixed   : 0xffff7fdffe7d0000 - 0xffff7fdffec00000   (  4288 KB)
+[    0.000000]     PCI I/O : 0xffff7fdffee00000 - 0xffff7fdfffe00000   (    16 MB)
+[    0.000000]     vmemmap : 0xffff7fe000000000 - 0xffff800000000000   (   128 GB maximum)
+[    0.000000]               0xffff7fe000000000 - 0xffff7fe117ff0000   (  4479 MB actual)
+[    0.000000]     memory  : 0xffff800000000000 - 0xffff845ffc000000   (4587456 MB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=64, Nodes=4
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	Build-time adjustment of leaf fanout to 64.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=4096 to nr_cpu_ids=64.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=64
+
+[root@CentOS ~]# cat /proc/buddyinfo
+Node 0, zone      DMA     22      9     15     13     11      9      6      6      4      5      5      2      0      0 
+Node 0, zone   Normal      5      9     16      5      3      2      1      2      2      1      2      2      1    250 
+Node 1, zone   Normal     29     25     19      9      6      3      0      1      2      2      3      2      1    252 
+Node 2, zone   Normal     33     86     31     11      6      1      2      1      1      2      2      3      1    253 
+Node 3, zone   Normal     74     95    117     66     43     29     20     16      7     11      6      6      1    237
+
+[root@CentOS ~]# cat /proc/ioports 
+00000000-0000ffff : PCI Bus 0002:80
+  000000e4-000000e4 : ipmi_si
+  000000e5-000000e5 : ipmi_si
+  000000e6-000000e6 : ipmi_si
+  000002f8-000002ff : serial
+00010000-0001ffff : PCI Bus 0004:88
+00020000-0002ffff : PCI Bus 0005:00
+00030000-0003ffff : PCI Bus 0006:c0
+00040000-0004ffff : PCI Bus 0007:90
+00050000-0005ffff : PCI Bus 000a:10
+00060000-0006ffff : PCI Bus 000c:20
+00070000-0007ffff : PCI Bus 000d:30
+
+
+D03：
+[root@CentOS ~]# cat /proc/ioports 
+00000000-0000ffff : PCI Bus 0000:00
+  000000e4-000000e4 : ipmi_si
+  000000e5-000000e5 : ipmi_si
+  000000e6-000000e6 : ipmi_si
+  000002f8-000002ff : serial
+00010000-0001ffff : PCI Bus 0001:e0
+00020000-0002ffff : PCI Bus 0002:80
+  00020000-00021fff : PCI Bus 0002:81
+    00020000-00021fff : PCI Bus 0002:82
+      00020000-00020fff : PCI Bus 0002:83
+      00021000-00021fff : PCI Bus 0002:84
+
+[root@CentOS ~]# cat /proc/buddyinfo
+Node 0, zone      DMA      7      6      9      8      5      7      7      5      6      3      2      2      1      0 
+Node 0, zone   Normal     14     22     19      6      4      4      0      3      2      4      3      4      2    114
+
+D03:
+[root@centos ~]# free -g
+              total        used        free      shared  buff/cache   available
+Mem:            511           5         505           0           0         466
+Swap:             0           0           0
+
+[    0.000000] Memory: 66939264K/67104704K available (9852K kernel code, 1678K rwdata, 4800K rodata, 1216K init, 7232K bss, 165440K reserved, 0K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7bdfffff0000   (126847 GB)
+[    0.000000]       .text : 0xffff000008080000 - 0xffff000008a20000   (  9856 KB)
+[    0.000000]     .rodata : 0xffff000008a20000 - 0xffff000008ee0000   (  4864 KB)
+[    0.000000]       .init : 0xffff000008ee0000 - 0xffff000009010000   (  1216 KB)
+[    0.000000]       .data : 0xffff000009010000 - 0xffff0000091b3a00   (  1679 KB)
+[    0.000000]        .bss : 0xffff0000091b3a00 - 0xffff0000098c3b60   (  7233 KB)
+[    0.000000]     fixed   : 0xffff7fdffe7d0000 - 0xffff7fdffec00000   (  4288 KB)
+[    0.000000]     PCI I/O : 0xffff7fdffee00000 - 0xffff7fdfffe00000   (    16 MB)
+[    0.000000]     vmemmap : 0xffff7fe000000000 - 0xffff800000000000   (   128 GB maximum)
+[    0.000000]               0xffff7fe000000000 - 0xffff7fe00c000000   (   192 MB actual)
+[    0.000000]     memory  : 0xffff800000000000 - 0xffff803000000000   (196608 MB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
+
+D03:
+[    0.000000] cma: Reserved 256 MiB at 0x0000000021c00000
+00026000-31c0ffff : System RAM
+
+D05:
+[    0.000000] cma: Reserved 256 MiB at 0x0000000021800000
+00026000-31aaffff : System RAM
+
+D05     D03
+fail 	ok
+fail 	ok
+D05+82599:-2016
+CmaTotal:         262144 kB
+CmaFree:          244192 kB
+
+D05:
+CmaTotal:         262144 kB
+CmaFree:          246208 kB
+
+D03:
+CmaTotal:         262144 kB
+CmaFree:          254180 kB
+
+
+
+
+4488
+1991
+
+
+

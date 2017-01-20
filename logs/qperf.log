@@ -20124,6 +20124,390 @@ tcp_bw:
 
 
 
+==================================================
+ubuntu:
+root@ubuntu:~# qperf -oo i:1:10:1 -m 1 192.168.12.12 tcp_bw tcp_lat -lca 0 -rca 1 
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.59 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.65 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.62 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.71 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.73 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.71 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.71 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.71 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.74 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.62 MB/sec
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  14.7 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.7 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  14.8 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.7 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.7 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.7 us
+
+
+root@ubuntu:~# qperf -oo i:1:10:1 -m 2 192.168.12.12 tcp_bw tcp_lat -lca 0 -rca 1
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.41 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.25 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.4 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.41 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.36 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.43 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.34 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.24 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.32 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3.3 MB/sec
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  14.3 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+
+
+===============================================
+centos:
+
+[root@centos ~]# qperf -oo i:1:10:1 -m 1 192.168.12.12 tcp_bw tcp_lat -lca 0 -rca 1
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.24 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.19 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.19 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.26 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.21 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.2 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.23 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.2 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.15 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.11 MB/sec
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  15.9 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  15.9 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  16 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  16 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.3 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  15.9 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  16.1 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  15.9 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.2 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  13.5 us
+
+
+[root@centos ~]# qperf -oo i:1:10:1 -m 2 192.168.12.12 tcp_bw tcp_lat -lca 0 -rca 1
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.32 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.43 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.44 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.34 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.28 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.34 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.43 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.62 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.52 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.29 MB/sec
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.2 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.6 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  16 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  14.1 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.2 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  13 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.2 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.2 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  12.2 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  15.8 us
+
+
+
+
+===============================================
+zdc mini
+[root@centos ~]# qperf -oo i:1:10:1 -m 1 192.168.12.12 tcp_bw tcp_lat -lca 0 -rca 1
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.42 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.48 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.37 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.46 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.48 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.48 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.51 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.43 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.52 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  1.48 MB/sec
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.47 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.47 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.54 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.47 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.47 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.4 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.44 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.45 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.38 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.64 us
+
+[root@centos ~]# qperf -oo i:1:10:1 -m 2 192.168.12.12 tcp_bw tcp_lat -lca 0 -rca 1
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.92 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.88 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.97 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.86 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.93 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.94 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.86 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  2.93 MB/sec
+tcp_bw:
+warning: -i set but not used in test tcp_bw
+    bw  =  3 MB/sec
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.45 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.41 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.41 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.47 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.46 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.58 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.53 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.51 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.41 us
+tcp_lat:
+warning: -i set but not used in test tcp_lat
+    latency  =  7.52 us
 
 
 
@@ -20137,10 +20521,95 @@ tcp_bw:
 
 
 
+============================================================
+170 - 172
+
+iperf:
+[  3]  0.0-238.4 sec   208 GBytes  7.50 Gbits/sec
+down-up:
+[  3]  0.0-64.4 sec  63.7 GBytes  8.49 Gbits/sec
+
+qperf:
+(reverse-i-search)`qp': qperf -oo msg_size:1:64K:*2 192.168.12.11 tcp_bw tcp_lat 
 
 
 
+    bw  =  1.99 MB/sec
+tcp_bw:
+    bw  =  3.91 MB/sec
+tcp_bw:
+    bw  =  7.71 MB/sec
+tcp_bw:
+    bw  =  15.1 MB/sec
+tcp_bw:
+    bw  =  27.6 MB/sec
+tcp_bw:
+    bw  =  55.9 MB/sec
+tcp_bw:
+    bw  =  106 MB/sec
+tcp_bw:
+    bw  =  200 MB/sec
+tcp_bw:
+    bw  =  322 MB/sec
+tcp_bw:
+    bw  =  479 MB/sec
+tcp_bw:
+    bw  =  607 MB/sec
+tcp_bw:
+    bw  =  742 MB/sec
+tcp_bw:
+    bw  =  838 MB/sec
+tcp_bw:
+    bw  =  879 MB/sec
+tcp_bw:
+    bw  =  930 MB/sec
+tcp_bw:
+    bw  =  912 MB/sec
+tcp_bw:
+    bw  =  925 MB/sec
+tcp_lat:
+    latency  =  27.3 us
+tcp_lat:
+    latency  =  27.3 us
+tcp_lat:
+    latency  =  27.2 us
+tcp_lat:
+    latency  =  27.1 us
+tcp_lat:
+    latency  =  27.1 us
+tcp_lat:
+    latency  =  27.1 us
+tcp_lat:
+    latency  =  27.2 us
+tcp_lat:
+    latency  =  27.2 us
+tcp_lat:
+    latency  =  27.1 us
+tcp_lat:
+    latency  =  27.1 us
+tcp_lat:
+    latency  =  27.2 us
+tcp_lat:
+    latency  =  65.5 us
+tcp_lat:
+    latency  =  68.1 us
+tcp_lat:
+    latency  =  71 us
+tcp_lat:
+    latency  =  80.5 us
+tcp_lat:
+    latency  =  114 us
+tcp_lat:
+    latency  =  141 us
 
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.12.11 () port 0 AF_INET
+
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    60.00    7869.74 
 
 
 
