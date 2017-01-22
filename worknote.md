@@ -601,93 +601,23 @@ sync
 ####################################################################
  CMA:
 ####################################################################	
-D05:
-[root@CentOS ~]# free -g
-              total        used        free      shared  buff/cache   available
-Mem:             63           4          59           0           0          54
-Swap:             0           0           0
+1.don't set cma at cmdline:
+D05 use 0-1G空间，申请512失败,
+D03 use 2-3G空间，申请成功.
 
-[    0.000000] Memory: 535966656K/536604608K available (10812K kernel code, 2042K rwdata, 4608K rodata, 1472K init, 7490K bss, 637952K reserved, 0K cma-reserved)
-[    0.000000] Virtual kernel memory layout:
-[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
-[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7bdfffff0000   (126847 GB)
-[    0.000000]       .text : 0xffff000008080000 - 0xffff000008b10000   ( 10816 KB)
-[    0.000000]     .rodata : 0xffff000008b10000 - 0xffff000008fa0000   (  4672 KB)
-[    0.000000]       .init : 0xffff000008fa0000 - 0xffff000009110000   (  1472 KB)
-[    0.000000]       .data : 0xffff000009110000 - 0xffff00000930ea00   (  2043 KB)
-[    0.000000]        .bss : 0xffff00000930ea00 - 0xffff000009a5f4f0   (  7491 KB)
-[    0.000000]     fixed   : 0xffff7fdffe7d0000 - 0xffff7fdffec00000   (  4288 KB)
-[    0.000000]     PCI I/O : 0xffff7fdffee00000 - 0xffff7fdfffe00000   (    16 MB)
-[    0.000000]     vmemmap : 0xffff7fe000000000 - 0xffff800000000000   (   128 GB maximum)
-[    0.000000]               0xffff7fe000000000 - 0xffff7fe117ff0000   (  4479 MB actual)
-[    0.000000]     memory  : 0xffff800000000000 - 0xffff845ffc000000   (4587456 MB)
-[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=64, Nodes=4
-[    0.000000] Hierarchical RCU implementation.
-[    0.000000] 	Build-time adjustment of leaf fanout to 64.
-[    0.000000] 	RCU restricting CPUs from NR_CPUS=4096 to nr_cpu_ids=64.
-[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=64
-
-[root@CentOS ~]# cat /proc/buddyinfo
-Node 0, zone      DMA     22      9     15     13     11      9      6      6      4      5      5      2      0      0 
-Node 0, zone   Normal      5      9     16      5      3      2      1      2      2      1      2      2      1    250 
-Node 1, zone   Normal     29     25     19      9      6      3      0      1      2      2      3      2      1    252 
-Node 2, zone   Normal     33     86     31     11      6      1      2      1      1      2      2      3      1    253 
-Node 3, zone   Normal     74     95    117     66     43     29     20     16      7     11      6      6      1    237
-
-[root@CentOS ~]# cat /proc/ioports 
-00000000-0000ffff : PCI Bus 0002:80
-  000000e4-000000e4 : ipmi_si
-  000000e5-000000e5 : ipmi_si
-  000000e6-000000e6 : ipmi_si
-  000002f8-000002ff : serial
-00010000-0001ffff : PCI Bus 0004:88
-00020000-0002ffff : PCI Bus 0005:00
-00030000-0003ffff : PCI Bus 0006:c0
-00040000-0004ffff : PCI Bus 0007:90
-00050000-0005ffff : PCI Bus 000a:10
-00060000-0006ffff : PCI Bus 000c:20
-00070000-0007ffff : PCI Bus 000d:30
+chunsong@fengchunsong-ThinkPad-T420:~$ grep -rn "cma: Reserved" D05
+16:[    0.000000] cma: Reserved 128 MiB at 0x0000000029800000
+17:[    0.000000] cma: Reserved 256 MiB at 0x0000000021800000
+chunsong@fengchunsong-ThinkPad-T420:~$ grep -rn "cma: Reserved" D03
+3629:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
+4492:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
+4593:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
+7945:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
+8809:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
+8932:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
 
 
-D03：
-[root@CentOS ~]# cat /proc/ioports 
-00000000-0000ffff : PCI Bus 0000:00
-  000000e4-000000e4 : ipmi_si
-  000000e5-000000e5 : ipmi_si
-  000000e6-000000e6 : ipmi_si
-  000002f8-000002ff : serial
-00010000-0001ffff : PCI Bus 0001:e0
-00020000-0002ffff : PCI Bus 0002:80
-  00020000-00021fff : PCI Bus 0002:81
-    00020000-00021fff : PCI Bus 0002:82
-      00020000-00020fff : PCI Bus 0002:83
-      00021000-00021fff : PCI Bus 0002:84
-
-[root@CentOS ~]# cat /proc/buddyinfo
-Node 0, zone      DMA      7      6      9      8      5      7      7      5      6      3      2      2      1      0 
-Node 0, zone   Normal     14     22     19      6      4      4      0      3      2      4      3      4      2    114
-
-D03:
-[root@centos ~]# free -g
-              total        used        free      shared  buff/cache   available
-Mem:            511           5         505           0           0         466
-Swap:             0           0           0
-
-[    0.000000] Memory: 66939264K/67104704K available (9852K kernel code, 1678K rwdata, 4800K rodata, 1216K init, 7232K bss, 165440K reserved, 0K cma-reserved)
-[    0.000000] Virtual kernel memory layout:
-[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
-[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7bdfffff0000   (126847 GB)
-[    0.000000]       .text : 0xffff000008080000 - 0xffff000008a20000   (  9856 KB)
-[    0.000000]     .rodata : 0xffff000008a20000 - 0xffff000008ee0000   (  4864 KB)
-[    0.000000]       .init : 0xffff000008ee0000 - 0xffff000009010000   (  1216 KB)
-[    0.000000]       .data : 0xffff000009010000 - 0xffff0000091b3a00   (  1679 KB)
-[    0.000000]        .bss : 0xffff0000091b3a00 - 0xffff0000098c3b60   (  7233 KB)
-[    0.000000]     fixed   : 0xffff7fdffe7d0000 - 0xffff7fdffec00000   (  4288 KB)
-[    0.000000]     PCI I/O : 0xffff7fdffee00000 - 0xffff7fdfffe00000   (    16 MB)
-[    0.000000]     vmemmap : 0xffff7fe000000000 - 0xffff800000000000   (   128 GB maximum)
-[    0.000000]               0xffff7fe000000000 - 0xffff7fe00c000000   (   192 MB actual)
-[    0.000000]     memory  : 0xffff800000000000 - 0xffff803000000000   (196608 MB)
-[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
+2.
 
 D03:
 [    0.000000] cma: Reserved 256 MiB at 0x0000000021c00000
@@ -711,6 +641,7 @@ CmaFree:          246208 kB
 D03:
 CmaTotal:         262144 kB
 CmaFree:          254180 kB
+
 
 
 
