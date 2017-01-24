@@ -67,9 +67,9 @@ do
 		tgt_cid=$(echo $tgt | awk '{print $1}')
 		echo "===================$line =================" >>$MRGD_FILE
 		echo "diff $cid $tgt_cid" >> $MRGD_FILE
-		git show $cid > $OUT_DIR/patch
-		git show $tgt_cid > $OUT_DIR/tgt_patch
-	        diff -u $OUT_DIR/patch $OUT_DIR/tgt_patch >> $MRGD_FILE
+		git show -U0 $cid > $OUT_DIR/patch
+		git show -U0 $tgt_cid > $OUT_DIR/tgt_patch
+        diff -u0 $OUT_DIR/patch $OUT_DIR/tgt_patch >> $MRGD_FILE
 		echo >>$MRGD_FILE
 		echo >>$MRGD_FILE
 	else

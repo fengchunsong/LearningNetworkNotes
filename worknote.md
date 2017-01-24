@@ -617,7 +617,7 @@ chunsong@fengchunsong-ThinkPad-T420:~$ grep -rn "cma: Reserved" D03
 8932:[    0.000000] cma: Reserved 512 MiB at 0x0000002fe0000000
 
 
-2.
+
 
 D03:
 [    0.000000] cma: Reserved 256 MiB at 0x0000000021c00000
