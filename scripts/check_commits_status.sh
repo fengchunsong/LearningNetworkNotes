@@ -105,7 +105,6 @@ do
 	then
 		#echo 
 		#echo "$line merge in success."
-		echo "$line" >> $MRGD_FILE
 		echo $line >> $UMRGD_FILE
 		echo "git cherry-pick $line" >> $CHRY_PICKS
 	else
@@ -113,6 +112,7 @@ do
 		git commit --allow-empty -m "$subject" > /dev/null 2>&1
 		if [ $? -eq 0 ]
 		then
+			echo "$line" >> $MRGD_FILE
 			echo $line >> $MRGD_PATCH_FILE
 		else
 			git cherry-pick --abort > /dev/null 2>&1
