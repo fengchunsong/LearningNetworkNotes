@@ -44,15 +44,24 @@ while true; do
 	esac
 done
 
-MRGD_FILE=$OUT_DIR/mrgd.txt
+MRGD_FILE=$OUT_DIR/mrgd-subject.txt
 UMRGD_FILE=$OUT_DIR/umrgd.txt
-UMRGD_CID=$OUT_DIR/umrgd_cid.txt
-CHRY_PICKS=$OUT_DIR/chry-pick.sh
-CHK_PATCHS=$OUT_DIR/chk-patches.sh
-TARGET_LOG=$OUT_DIR/target.log
+CHRY_PICKS=$OUT_DIR/umrgd-cherry-pick.sh
+CONFLICT_CMTS=$OUT_DIR/umrgd-conflict.txt
+TARGET_LOG=$OUT_DIR/.target.log
+UMRGD_CIDS=$OUT_DIR/.umrgd-cid.txt
+SORT_UMRGD_CIDS=$OUT_DIR/.umrgd-scid.txt
+MRGD_PATCH_FILE=$OUT_DIR/mrgd-patch.txt
+CMT_PATCH=$OUT_DIR/.patch
+TGT_PATCH=$OUT_DIR/.tgt_patch
 index=0
 rm $MRGD_FILE 2> /dev/null
 rm $UMRGD_FILE 2> /dev/null
+rm $UMRGD_CIDS 2> /dev/null
+rm $CHRY_PICKS 2> /dev/null
+rm $CONFLICT_CMTS 2> /dev/null
+rm $MRGD_PATCH_FILE 2> /dev/null
+TARGET_HEAD=$(git log $TARGET_BRANCH --format=%h -1)
 git log $TARGET_BRANCH --oneline > $TARGET_LOG
 while read line
 do
@@ -67,22 +76,60 @@ do
 		tgt_cid=$(echo $tgt | awk '{print $1}')
 		echo "===================$line =================" >>$MRGD_FILE
 		echo "diff $cid $tgt_cid" >> $MRGD_FILE
-		git show -U0 $cid > $OUT_DIR/patch
-		git show -U0 $tgt_cid > $OUT_DIR/tgt_patch
-        diff -u0 $OUT_DIR/patch $OUT_DIR/tgt_patch >> $MRGD_FILE
+		git show -U0 $cid > $CMT_PATCH
+		git show -U0 $tgt_cid > $TGT_PATCH
+		diff -u0 $CMT_PATCH $TGT_PATCH >> $MRGD_FILE
 		echo >>$MRGD_FILE
 		echo >>$MRGD_FILE
 	else
 		index=$(($index+1));
  		#echo "estuary don't have $line" 
-		echo $line>>$UMRGD_FILE
-		echo "$index $cid" >> $UMRGD_CID
+		echo "$index $cid" >> $UMRGD_CIDS
 	fi
 	#echo 
 	#echo 
 done < $ALLCOMMITS
-cat $UMRGD_CID | sort -n -r | awk -F ' ' '{print "git cherry-pick " $NF}' > $CHRY_PICKS
 
-echo "All merged commits:   $MRGD_FILE"
-echo "All unmerged commits: $UMRGD_FILE"
-echo "cherry-pick all unmerged commits can use $CHRY_PICKS"
+git checkout $TARGET_BRANCH > /dev/null 2>&1
+
+cat $UMRGD_CIDS | sort -n -r | awk -F ' ' '{print $NF}' > $SORT_UMRGD_CIDS
+while read line
+do
+	#echo "$line"
+	#echo "--------"
+	git cherry-pick $line > /dev/null 2>&1
+	if [ $? -eq 0 ]
+	then
+		#echo 
+		#echo "$line merge in success."
+		echo $line >> $UMRGD_FILE
+		echo "git cherry-pick $line" >> $CHRY_PICKS
+	else
+		subject=$(git log $line  --format=%s -1)
+		git commit --allow-empty -m "$subject" > /dev/null 2>&1
+		if [ $? -eq 0 ]
+		then
+			echo $line >> $MRGD_PATCH_FILE
+		else
+			git cherry-pick --abort > /dev/null 2>&1
+			echo $line >> $UMRGD_FILE
+			echo $line >> $CONFLICT_CMTS
+		fi
+	fi
+	#echo 
+	#echo 
+done < $SORT_UMRGD_CIDS
+git reset --hard $TARGET_HEAD > /dev/null 2>&1
+echo
+echo "======================merged=========================="
+echo "same subject:   $MRGD_FILE"
+echo "different subject:   $MRGD_PATCH_FILE"
+echo
+echo "======================unmerged========================"
+echo "all unmerged commits in $UMRGD_FILE"
+echo "cherry-pick by $CHRY_PICKS"
+echo "conflict: $CHRY_PICKS"
+echo
+
+rm $CMT_PATCH
+rm $TGT_PATCH
