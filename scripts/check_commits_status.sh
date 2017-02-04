@@ -140,7 +140,10 @@ echo
 echo "======================unmerged========================"
 echo "all unmerged commits in $UMRGD_FILE"
 echo "cherry-pick by $CHRY_PICKS"
-echo "conflict: $CHRY_PICKS"
+echo
+echo "======================conflict========================"
+echo "all conflict commits in $CONFLICT_CMTS"
+echo "conflict-info: $CNFLCT_FILE"
 echo
 
 rm $CMT_PATCH
