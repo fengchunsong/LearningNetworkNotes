@@ -118,6 +118,7 @@ do
 			echo $line >> $MRGD_PATCH_FILE
 		else
 			echo "===================$line =================" >>$CNFLCT_FILE
+			git log $line --name-status -1  >>$CNFLCT_FILE
 			git status --u=no  >>$CNFLCT_FILE
 			git diff -U0 >>$CNFLCT_FILE
 			echo  >>$CNFLCT_FILE
@@ -146,5 +147,6 @@ echo "all conflict commits in $CONFLICT_CMTS"
 echo "conflict-info: $CNFLCT_FILE"
 echo
 
+rm $TARGET_LOG
 rm $CMT_PATCH
 rm $TGT_PATCH
