@@ -47,12 +47,13 @@ done
 MRGD_FILE=$OUT_DIR/mrgd.txt
 UMRGD_FILE=$OUT_DIR/umrgd.txt
 CHRY_PICKS=$OUT_DIR/umrgd-cherry-pick.sh
-CONFLICT_CMTS=$OUT_DIR/umrgd-conflict.txt
+CONFLICT_CMTS=$OUT_DIR/conflict.txt
 TARGET_LOG=$OUT_DIR/.target.log
 UMRGD_CIDS=$OUT_DIR/.umrgd-cid.txt
 SORT_UMRGD_CIDS=$OUT_DIR/.umrgd-scid.txt
 MRGD_SUBJECT_FILE=$OUT_DIR/mrgd-subject.txt
 MRGD_PATCH_FILE=$OUT_DIR/mrgd-patch.txt
+CNFLCT_FILE=$OUT_DIR/cnflct-info.txt
 CMT_PATCH=$OUT_DIR/.patch
 TGT_PATCH=$OUT_DIR/.tgt_patch
 index=0
@@ -63,6 +64,7 @@ rm $CHRY_PICKS 2> /dev/null
 rm $CONFLICT_CMTS 2> /dev/null
 rm $MRGD_SUBJECT_FILE 2> /dev/null
 rm $MRGD_PATCH_FILE 2> /dev/null
+rm $CNFLCT_FILE 2> /dev/null
 TARGET_HEAD=$(git log $TARGET_BRANCH --format=%h -1)
 git log $TARGET_BRANCH --oneline > $TARGET_LOG
 while read line
@@ -115,9 +117,14 @@ do
 			echo "$line" >> $MRGD_FILE
 			echo $line >> $MRGD_PATCH_FILE
 		else
-			git cherry-pick --abort > /dev/null 2>&1
-			echo $line >> $UMRGD_FILE
+			echo "===================$line =================" >>$CNFLCT_FILE
+			git status --u=no  >>$CNFLCT_FILE
+			git diff -U0 >>$CNFLCT_FILE
+			echo  >>$CNFLCT_FILE
+			echo  >>$CNFLCT_FILE
+			#echo $line >> $UMRGD_FILE
 			echo $line >> $CONFLICT_CMTS
+			git cherry-pick --abort > /dev/null 2>&1
 		fi
 	fi
 	#echo 
